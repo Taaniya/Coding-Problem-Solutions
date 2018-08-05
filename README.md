@@ -1,5 +1,5 @@
 # Google-Code-Jam-Problems
-The repo contains solutions to two of the problems from Google Code Jam 
+This repository contains solutions to two of the problems from Google Code Jam 
 
 Problem A
 Sherlock and Watson have recently enrolled in a computer programming course. Today, the tutor taught them about the balanced parentheses problem. A string S consisting only of characters ( and/or ) is balanced if:
