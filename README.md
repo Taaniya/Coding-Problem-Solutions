@@ -1,7 +1,8 @@
 # Google-Code-Jam-Problems
 This repository contains solutions to two of the problems from Google Code Jam 
 
-Problem A
+**Problem A**
+
 Sherlock and Watson have recently enrolled in a computer programming course. Today, the tutor taught them about the balanced parentheses problem. A string S consisting only of characters ( and/or ) is balanced if:
 It is the empty string, or:
 It has the form (S), where S is a balanced string, or:
@@ -27,9 +28,9 @@ Large dataset-
  
  
  
-Problem B -
-Watson and Sherlock are gym buddies.
+**Problem B -**
 
+Watson and Sherlock are gym buddies.
 Their gym trainer has given them three numbers, A, B, and N, and has asked Watson and Sherlock to pick two different positive integers i and j, where i and j are both less than or equal to N. Watson is expected to eat exactly iA sprouts every day, and Sherlock is expected to eat exactly jB sprouts every day.
 
 Watson and Sherlock have noticed that if the total number of sprouts eaten by them on a given day is divisible by a certain integer K, then they get along well that day.
