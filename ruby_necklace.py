@@ -4,7 +4,6 @@
 # @author: Taaniya
 
 """
-
 This code implements solution the Ruby necklace problem from TechGig CodeGladiators 2018.
 Greedy approach can be observed when the cases for adding green and yellow 
 rubies are interchanged when the input is 1 1 1 1.
@@ -53,7 +52,6 @@ One such necklace is Blue Red Green.
 
 Sample TestCase 2
 Input
-
 1
 1
 1
@@ -64,14 +62,10 @@ Output
 Example
 
 One such necklace is Blue Red Green Yellow.
-
 """
 
 def main(inp):
     b,r,y,g = inp[0],inp[1],inp[2],inp[3]
-    
-    total = b + r + y + g
-    #print("total {}".format(total))
     seq = ""
     while(b+r+g+y)!=0:
         oldseq = seq
