@@ -1,6 +1,6 @@
 ## Code solutions
 
-This repository contains coding solutions to various problems I solved in Hackathons and Code Jams.
+This repository contains coding solutions to various problems I came across during Hackathons and Code Jam contests.
 
 ## Contents
 
