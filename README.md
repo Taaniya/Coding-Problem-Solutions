@@ -9,6 +9,6 @@ This repository contains coding solutions to various problems I solved in Hackat
 3. Ruby Necklace (TechGig CodeGladiators 2018)
 
 
-#### Languages
+#### Programming Languages
 1. Python
 2. Java 
