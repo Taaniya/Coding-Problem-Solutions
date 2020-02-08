@@ -99,4 +99,4 @@ def main(inp):
     return len(seq)
 
 
-print(main([2,1,1,1]))
+print(main([1,1,2,1]))
