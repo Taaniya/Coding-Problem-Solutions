@@ -2,7 +2,7 @@
 
 def getLis(arr):
     """
-    Find length of longest increasing subsequence.
+    Find length of longest increasing subsequence using Dynamic Programming - Memoization
     
     Parameters :
     -------------------
