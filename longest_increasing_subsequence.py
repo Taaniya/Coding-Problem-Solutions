@@ -27,18 +27,19 @@ def getLis(arr):
     def lis(arr):   
         nonlocal maximum
         n = len(arr)
-        if len(arr) == 1:
+        if n == 1:
             return 1
         
-        for j in range(len(arr) - 1 ):
-            if not done[j]:
-                memo[j] = lis(arr[:j+1])
-                done[j] = 1
-                maximum = max(maximum, memo[j])
-                
-            if arr[n-1] > arr[j]:
-                memo[n-1] = max( memo[j] + 1, memo[n-1])
-                maximum = max(maximum, memo[n-1])
+        else:
+            for j in range(len(arr) - 1 ):
+                if not done[j]:
+                    memo[j] = lis(arr[:j+1])
+                    done[j] = 1
+                    maximum = max(maximum, memo[j])
+
+                if arr[n-1] > arr[j]:
+                    memo[n-1] = max( memo[j] + 1, memo[n-1])
+                    maximum = max(maximum, memo[n-1])
         
         done[n-1] = 1        
         return memo[n-1]
