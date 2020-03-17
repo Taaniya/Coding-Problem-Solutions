@@ -2,14 +2,18 @@
 count = 0
 def editD(a, b, m, n, ed=None):
     """
-    Paremeters:
+    Computes edit distance between 2 strings using Dynamic Programming with memoization.
+    Parameters:
     ---------------------
     a : string 1
     b : string 2
     m : lentgh of string 1
     n : length of string 2
-    ed : array in mempry to store results of sub prooblems
+    ed : array in memory to store result of sub problems
     
+    Returns:
+    ---------------------
+    Edit distance between string 1 and string 2.
     
     eg.
     >> editD("cut","cutter",3,6)
