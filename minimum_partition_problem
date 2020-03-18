@@ -39,7 +39,7 @@ def getPartitions(s, n, s1, s2, lookup=None):
         return diff
 
     if  key not in lookup:
-        # For every element in the given collection it can be included in 
+        # For every element in the given collection it can either be included in 
         # subset 1 or excluded. Recur in both the possibilities
         inc = getPartitions(s, n-1, s1 + s[n], s2, lookup)
         exc = getPartitions(s, n-1, s1, s2 + s[n], lookup)
