@@ -43,21 +43,17 @@ def findLongestPath(mat):
         if (x,y) in lookup:
             return lookup[(x,y)]
 
-        if (x-1) >=0 :
-            if (mat[x-1][y] - mat[x][y]) == 1:
-                lookup[(x,y)] = 1 + getLength(x-1,y,mat,lookup)
+        if ((x-1) >=0) and ((mat[x-1][y] - mat[x][y]) == 1):
+            lookup[(x,y)] = 1 + getLength(x-1,y,mat,lookup)
 
-        if (x+1) < m:
-            if (mat[x+1][y] - mat[x][y]) == 1:
-                lookup[(x,y)] = 1 + getLength(x+1,y,mat,lookup)
+        if ((x+1) < m) and ((mat[x+1][y] - mat[x][y]) == 1):
+            lookup[(x,y)] = 1 + getLength(x+1,y,mat,lookup)
 
-        if (y-1) >= 0:
-            if (mat[x][y-1] - mat[x][y]) == 1:
-                lookup[(x,y)] = 1 + getLength(x,y-1,mat,lookup)
+        if ((y-1) >= 0) and ((mat[x][y-1] - mat[x][y]) == 1):
+            lookup[(x,y)] = 1 + getLength(x,y-1,mat,lookup)
 
-        if (y+1) < n:
-            if (mat[x][y+1] - mat[x][y]) == 1:
-                lookup[(x,y)] = 1 + getLength(x,y+1,mat,lookup)
+        if ((y+1) < n) and ((mat[x][y+1] - mat[x][y]) == 1):
+            lookup[(x,y)] = 1 + getLength(x,y+1,mat,lookup)
 
         if (x,y) not in lookup:
             lookup[(x,y)] = 1
