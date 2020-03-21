@@ -46,16 +46,16 @@ def findLongestPath(mat):
         if ((x-1) >=0) and ((mat[x-1][y] - mat[x][y]) == 1):
             lookup[(x,y)] = 1 + getLength(x-1,y,mat,lookup)
 
-        if ((x+1) < m) and ((mat[x+1][y] - mat[x][y]) == 1):
+        elif ((x+1) < m) and ((mat[x+1][y] - mat[x][y]) == 1):
             lookup[(x,y)] = 1 + getLength(x+1,y,mat,lookup)
 
-        if ((y-1) >= 0) and ((mat[x][y-1] - mat[x][y]) == 1):
+        elif ((y-1) >= 0) and ((mat[x][y-1] - mat[x][y]) == 1):
             lookup[(x,y)] = 1 + getLength(x,y-1,mat,lookup)
 
-        if ((y+1) < n) and ((mat[x][y+1] - mat[x][y]) == 1):
+        elif ((y+1) < n) and ((mat[x][y+1] - mat[x][y]) == 1):
             lookup[(x,y)] = 1 + getLength(x,y+1,mat,lookup)
 
-        if (x,y) not in lookup:
+        else:
             lookup[(x,y)] = 1
             
         maximum = max(maximum,lookup[(x,y)])
