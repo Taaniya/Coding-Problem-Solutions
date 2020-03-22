@@ -5,6 +5,7 @@ def findSubset(arr, total):
     Given a set of non-negative integers, and a value sum, determine if there is a subset 
     of the given set with sum equal to given sum.
     
+    This solution is solved using Dynamic Programming approach and memoization.
     Parameters:
     --------------
     arr : List(int) 
