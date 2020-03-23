@@ -24,16 +24,20 @@ def findMax(items, weights, w):
     maximum = 0         # maximum total weight
     def isPresent(size,k,total):
         nonlocal maximum
-        key = (size,total)
+        # key = (size,total)
+        key = (size,k)
+        
         if key in lookup:
             return lookup[key]
 
         if size == 0:
             if k <= w:
                 maximum = max(maximum, total)
+                lookup[key] = True
                 return True
             else:
-                 return False
+                lookup[key] = False
+                return False
 
         elif k > w:
             return False
@@ -43,7 +47,7 @@ def findMax(items, weights, w):
         # the total weight <= weight capacity
         inc = isPresent(size-1, k+weights[size-1], total+items[size-1])
         exc = isPresent(size-1, k, total)
-        lookup[(size, total)] = inc or exc
-        return   lookup[(size, total)]
+        lookup[key] = inc or exc
+        return   lookup[key]
     _ = isPresent(len(items),0,0)
     return maximum
