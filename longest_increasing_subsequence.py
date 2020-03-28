@@ -20,7 +20,7 @@ def getLis(arr):
     size = len(arr)
     memo = [1] * size
     done = [0] * size
-    maximum = 1
+    maximum = 0
     
     def lis(i,j):   
         nonlocal maximum
