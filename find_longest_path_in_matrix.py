@@ -4,12 +4,9 @@ def findLongestPath(mat):
     """
     This function finds length of the longest path in a square matrix containing unique integers 
     such that the path contains numbers in the increasing order with a difference of 1.
-    
     This solution is implemented using Dynamic programming approach and memoization.
-    
     Problem statement reference:
     https://www.geeksforgeeks.org/find-the-longest-path-in-a-matrix-with-given-constraints/
-    
     Parameters:
     ------------
     mat : (2D List(int)) Matrix of integers
@@ -17,7 +14,6 @@ def findLongestPath(mat):
     Returns:
     ------------
     max : (int) Length of longest path
-    
     eg. 
     >> mat = [[10, 11, 3], [5, 2, 1], [6, 7, 8]]
     >> findLongestPath(mat)
@@ -42,19 +38,14 @@ def findLongestPath(mat):
         nonlocal maximum
         if (x,y) in lookup:
             return lookup[(x,y)]
-
         if ((x-1) >=0) and ((mat[x-1][y] - mat[x][y]) == 1):
             lookup[(x,y)] = 1 + getLength(x-1,y,mat,lookup)
-
         elif ((x+1) < m) and ((mat[x+1][y] - mat[x][y]) == 1):
             lookup[(x,y)] = 1 + getLength(x+1,y,mat,lookup)
-
         elif ((y-1) >= 0) and ((mat[x][y-1] - mat[x][y]) == 1):
             lookup[(x,y)] = 1 + getLength(x,y-1,mat,lookup)
-
         elif ((y+1) < n) and ((mat[x][y+1] - mat[x][y]) == 1):
             lookup[(x,y)] = 1 + getLength(x,y+1,mat,lookup)
-
         else:
             lookup[(x,y)] = 1
             
@@ -66,6 +57,4 @@ def findLongestPath(mat):
         for j in range(order):
             if (i,j) not in lookup:
                 _ = getLength(i,j,mat,lookup)
-                
-                
     return maximum
