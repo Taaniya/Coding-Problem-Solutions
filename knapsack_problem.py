@@ -29,16 +29,13 @@ def findMax(items, weights, w):
         
         if key in lookup:
             return lookup[key]
-
         if size == 0:
             if k <= w:
                 maximum = max(maximum, total)
                 lookup[key] = True
-                return True
             else:
                 lookup[key] = False
-                return False
-
+            return lookup[key]
         elif k > w:
             return False
         maximum = max(maximum, total)
