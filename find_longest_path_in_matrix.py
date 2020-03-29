@@ -32,11 +32,11 @@ def findLongestPath(mat):
     >> 7
     """
     lookup = dict()
+    m = len(mat)
+    n = len(mat[0])    
     maximum = 1
     
     def getLength(x, y , mat, lookup):
-        m = len(mat)
-        n = len(mat[0])
         nonlocal maximum
         if (x,y) in lookup:
             return lookup[(x,y)]
