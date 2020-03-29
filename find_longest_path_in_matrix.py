@@ -27,8 +27,10 @@ def findLongestPath(mat):
     >> findLongestPath(mat)
     >> 3
     Path - 1, 2, 3 
+    >> mat = [[1, 2, 5], [4, 3, 0], [5, 6, 7]]
+    >> findLongestPath(mat)
+    >> 7
     """
-    
     lookup = dict()
     maximum = 1
     
@@ -47,8 +49,7 @@ def findLongestPath(mat):
         elif ((y+1) < n) and ((mat[x][y+1] - mat[x][y]) == 1):
             lookup[(x,y)] = 1 + getLength(x,y+1,mat,lookup)
         else:
-            lookup[(x,y)] = 1
-            
+            lookup[(x,y)] = 1       
         maximum = max(maximum,lookup[(x,y)])
         return lookup[(x,y)]
     
