@@ -22,6 +22,7 @@ def findMax(items, weights, w):
     # key-value pairs where key is a tuple(size,total value)
     lookup = dict()
     maximum = 0         # maximum total weight
+    
     def isPresent(size,k,total):
         nonlocal maximum
         # key = (size,total)
@@ -46,5 +47,6 @@ def findMax(items, weights, w):
         exc = isPresent(size-1, k, total)
         lookup[key] = max(inc, exc)
         return   lookup[key]
+    
     _ = isPresent(len(items),0,0)
     return maximum
