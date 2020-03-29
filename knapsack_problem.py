@@ -32,19 +32,19 @@ def findMax(items, weights, w):
         if size == 0:
             if k <= w:
                 maximum = max(maximum, total)
-                lookup[key] = True
+                lookup[key] = total
             else:
-                lookup[key] = False
+                lookup[key] = 0
             return lookup[key]
         elif k > w:
-            return False
+            return 0
         maximum = max(maximum, total)
         # Either an item is included in the optimal subset or it's not.
         # We'll try both and cache the boolean result whether 
         # the total weight <= weight capacity
         inc = isPresent(size-1, k+weights[size-1], total+items[size-1])
         exc = isPresent(size-1, k, total)
-        lookup[key] = inc or exc
+        lookup[key] = max(inc, exc)
         return   lookup[key]
     _ = isPresent(len(items),0,0)
     return maximum
