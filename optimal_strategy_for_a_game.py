@@ -44,10 +44,8 @@ def computeTotal(arr):
                 end -= 1
         
         # play our chance
-        if start == end:
-            return 0
-
-        elif (end - start ) == 1:
+        if (end - start ) == 1:
+            # If only 2 coins are present in the game, choose greedily.
             lookup[(start, end)] = arr[start] if arr[start] > arr[end] else arr[end]
 
         elif (start,end) in lookup :            
