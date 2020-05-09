@@ -50,10 +50,12 @@ class MinHeap():
         else:
             print("heap is empty")
  
+
 class Graph():
     def __init__(self, graph, v):
         self.graph = graph
         self.v = v
+        
     def dijkstra(self, src):
         """
         Implements Dijkstra's algorithm to compute shortest path from a source node to all other nodes in the graph
@@ -63,8 +65,7 @@ class Graph():
         src - index of source node
         Returns:
         --------------
-        dist - list of distances of each node of graph from the source node
-        
+        dist - list of distances of each node of graph from the source node    
         eg.
         >> adj = [[1,4,0,3,0],
                    [4,1,7,0,2],
@@ -76,7 +77,6 @@ class Graph():
            [0, 4, 11, 3, 6]
         """
         unvisited = MinHeap()        
-        visited = set()
         dist = []
         for v_id in range(0, self.v):
             if v_id != src:
@@ -87,7 +87,6 @@ class Graph():
                 dist.append(0)
         while unvisited.queue:
             min_node = unvisited.extract_min()
-            visited.add(min_node)
             for node_dist,node in unvisited.queue:
                 w = self.graph[min_node][node] 
                 new_dist = w + dist[min_node]
