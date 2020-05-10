@@ -2,6 +2,7 @@
 
 import sys
 import math
+from collections import defaultdict
 
 class MinHeap():
     def __init__(self):
@@ -52,31 +53,44 @@ class MinHeap():
  
 
 class Graph():
-    def __init__(self, graph, v):
-        self.graph = graph
-        self.v = v
+    def __init__(self):
+        self.graph = defaultdict(set)
+        self.v = 0
+        
+    def addEdge(self, u, v, w):
+        '''Adds an edge from u to v with edge weight w. '''
+        self.graph[u].add((v,w))
+        self.v = len(self.graph)
         
     def dijkstra(self, src):
         """
         Implements Dijkstra's algorithm to compute shortest path from a source node to all other nodes in the graph
-        represented as adjacency matrix. This implementation uses Priority queue using Binary Heap.
+        represented as edglist. This implementation uses Priority queue using Binary Heap.
         Parameters:
         --------------
         src - index of source node
         Returns:
         --------------
-        dist - list of distances of each node of graph from the source node    
+        dist - list of distances of each node of graph from the source node   
         eg.
-        >> adj = [[1,4,0,3,0],
-                   [4,1,7,0,2],
-                   [0,7,1,0,5],
-                   [3,0,0,1,5],
-                   [0,2,5,5,1]] 
-        >> graph = Graph(graph=adj, v=5)
+        >> graph = Graph() 
+        >> graph.addEdge(0,1,4)
+            graph.addEdge(0,3,3)
+            graph.addEdge(1,0,4)
+            graph.addEdge(1,2,7)
+            graph.addEdge(1,4,2)
+            graph.addEdge(2,1,7)
+            graph.addEdge(2,4,5)
+            graph.addEdge(3,0,3)
+            graph.addEdge(3,4,5)
+            graph.addEdge(4,3,5)
+            graph.addEdge(4,1,2)
+            graph.addEdge(4,2,5)
         >> graph.dijkstra(0)
            [0, 4, 11, 3, 6]
         """
         unvisited = MinHeap()        
+        visited = set()
         dist = []
         for v_id in range(0, self.v):
             if v_id != src:
@@ -87,10 +101,10 @@ class Graph():
                 dist.append(0)
         while unvisited.queue:
             min_node = unvisited.extract_min()
-            for node_dist,node in unvisited.queue:
-                w = self.graph[min_node][node] 
+            visited.add(min_node)
+            for nbr,w in self.graph[min_node]:
                 new_dist = w + dist[min_node]
-                if (w > 0) and (new_dist < node_dist):
-                    unvisited.decrease_key((node_dist, node), new_dist)
-                    dist[node] = new_dist 
+                if new_dist < dist[nbr]:
+                    unvisited.decrease_key((dist[nbr], nbr), new_dist)
+                    dist[nbr] = new_dist 
         return dist
