@@ -42,4 +42,14 @@ class Solution:
         if carry == 1:
             node.next = ListNode(carry)
         return head
-    
+ 
+
+if __name__ == "__main__":
+    l1 = ListNode(0)
+    l2 = ListNode(7)
+    l2.next = ListNode(3)
+    sol = Solution()
+    result_list = sol.addTwoNumbers(l1, l2)
+    while result_list is not None:
+        print(result_list.val)
+        result_list = result_list.next
