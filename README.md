@@ -12,7 +12,7 @@ This repository contains coding solutions to various problems I came across duri
 6. Breadth First Search with queue
 7. Depth First Search with Recursion
 8. Cycle Detection in Graphs with Union find
-9. Dijkstra's Single Source shortest path algorithm
+9. Dijkstra's Single Source shortest path algorithm using Priority queue 
 10. Computing Edit distance using DP with Memoization
 11. Finding longest path in a matrix
 12. Finding subset of numbers equal to a given sum using DP and memoization
