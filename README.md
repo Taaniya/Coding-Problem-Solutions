@@ -17,7 +17,7 @@ This repository contains coding solutions to various problems I came across duri
 11. Finding longest path in a matrix
 12. Finding subset of numbers equal to a given sum using DP and memoization
 13. All pair shortest path - Floyd Marshall Algorithm 
-14. Heapshort Algorithm
+14. Heapsort Algorithm
 15. Knapsack problem
 16. Longest Common subsequence using DP and memoization
 17. Longest increasing subsequence using DP and memoization
