@@ -26,6 +26,7 @@ This repository contains coding solutions to various problems I came across duri
 20. Topological sort in graphs
 21. Ways to cover a distance
 22. Word squares problem
+23. Longest Increasing Path in a matrix
 
 
 #### Programming Languages
