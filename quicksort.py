@@ -1,9 +1,8 @@
 #! /user/bin/env python
 
 """
-This solution implements quick sort algorithm using normal partitioning technique 
-to choose pivot as well as with randomized technique, in order to obtain good average-case 
-performance over all inputs.
+This solution implements quick sort algorithm with randomized partitioning technique 
+to choose pivot in order to obtain good average-case performance over all inputs.
 
 For results of analysis of its performance with & without randomized version, check
 out the quick sort analysis notebook in this repository.
