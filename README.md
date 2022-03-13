@@ -10,7 +10,7 @@ This repository contains coding solutions to various problems I came across duri
 4. Ben - The Gamer (TechGig CodeGladiators 2018)
 5. Adding 2 numbers represented as linked lists
 6. Breadth First Search with queue
-7. Depth First Search with Recursion
+7. Depth First Search with Recursion & cycle detection
 8. Cycle Detection in Graphs with Union find
 9. Dijkstra's Single Source shortest path algorithm using Priority queue 
 10. Computing Edit distance using DP with Memoization
