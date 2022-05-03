@@ -28,7 +28,7 @@ This repository contains coding solutions to various problems I came across duri
 22. Word squares problem
 23. Longest Increasing Path in a matrix
 24. Quicksort algorithm with randomized partitioning technique
-25. Binary Search Tree
+25. Binary Search Tree with pre, post and inorder traversal
 
 
 #### Programming Languages
