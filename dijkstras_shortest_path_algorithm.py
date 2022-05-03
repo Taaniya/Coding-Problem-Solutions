@@ -65,7 +65,9 @@ class Graph():
     def dijkstra(self, src):
         """
         Implements Dijkstra's algorithm to compute shortest path from a source node to all other nodes in the graph
-        represented as edglist. This implementation uses Priority queue using Binary Heap.
+        represented as edglist. This implementation uses min-Priority queue using Binary Heap and calls three priority queue operations
+        insert, extract-min & decrease-key (implicit while relaxing).
+        
         Parameters:
         --------------
         src - index of source node
