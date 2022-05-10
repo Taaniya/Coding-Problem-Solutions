@@ -1,8 +1,12 @@
 #! /bin/usr/bin/env python
+
+from functools import lru_cache
+
 count = 0
 def editD(a, b, m, n, ed=None):
     """
     Computes edit distance between 2 strings using Dynamic Programming with memoization.
+    This function uses an array for memoization.
     Parameters:
     ---------------------
     a : string 1
@@ -27,7 +31,6 @@ def editD(a, b, m, n, ed=None):
     if ed is None:
         ed = [[None for j in range(n)] for i in range(m)]
         
-
     if m == 0 :
         return n
 
@@ -37,7 +40,7 @@ def editD(a, b, m, n, ed=None):
     if ed[m-1][n-1] is not None:
         return ed[m-1][n-1]
     
-    elif a[m-1] == b[n-1]:
+    elif a[m-1] == b[n-1]:                      # compare last characters
         ed[m-1][n-1] = editD(a, b, m-1, n-1)
 
     else:
@@ -45,3 +48,42 @@ def editD(a, b, m, n, ed=None):
         count += 1
         print(ed)
     return ed[m-1][n-1]
+
+
+dist = {}
+def findEditDistance(s1, s2):
+    """ This function uses dictionary for memoization.
+    eg.
+    >> findEditDistance("cut","cutter")
+    >> 3
+    """
+  if dist.get((s1, s2), None):
+    return dist[(s1, s2)]
+  elif s1 == "":
+    return len(s2)
+  elif s2 == "":
+	  return len(s1)
+  elif s1[-1:] == s2[-1:]:                       # compare last characters
+    return findEditDistance(s1[:-1], s2[:-1])
+  else:
+    dist[(s1, s2)] = 1 + min(findEditDistance(s1[:-1], s2) , findEditDistance(s1, s2[:-1]), findEditDistance(s1[:-1], s2[:-1]))
+    return dist[(s1, s2)]
+
+
+@lru_cache(maxsize=100)
+def computeED(s1,s2):
+    """ This function uses LRU cache for memoization. 
+    eg.
+    >> computeED("cut","cutter")
+    >> 3
+    """
+  if s1 == "":
+    return len(s2)
+  elif s2 == "":
+	  return len(s1)
+  elif s1[-1:] == s2[-1:]:                                # compare last characters
+    return computeED(s1[:-1], s2[:-1])
+  else:
+    return 1 + min(computeED(s1[:-1], s2) , computeED(s1, s2[:-1]), computeED(s1[:-1], s2[:-1]))
+ 
+    
