@@ -57,17 +57,17 @@ def findEditDistance(s1, s2):
     >> findEditDistance("cut","cutter")
     >> 3
     """
-  if dist.get((s1, s2), None):
-    return dist[(s1, s2)]
-  elif s1 == "":
-    return len(s2)
-  elif s2 == "":
-	  return len(s1)
-  elif s1[-1:] == s2[-1:]:                       # compare last characters
-    return findEditDistance(s1[:-1], s2[:-1])
-  else:
-    dist[(s1, s2)] = 1 + min(findEditDistance(s1[:-1], s2) , findEditDistance(s1, s2[:-1]), findEditDistance(s1[:-1], s2[:-1]))
-    return dist[(s1, s2)]
+    if dist.get((s1, s2), None):
+	return dist[(s1, s2)]
+    elif s1 == "":
+        return len(s2)
+    elif s2 == "":
+	return len(s1)
+    elif s1[-1:] == s2[-1:]:                       # compare last characters
+        return findEditDistance(s1[:-1], s2[:-1])
+    else:
+        dist[(s1, s2)] = 1 + min(findEditDistance(s1[:-1], s2) , findEditDistance(s1, s2[:-1]), findEditDistance(s1[:-1], s2[:-1]))
+        return dist[(s1, s2)]
 
 
 @lru_cache(maxsize=100)
@@ -77,13 +77,13 @@ def computeED(s1,s2):
     >> computeED("cut","cutter")
     >> 3
     """
-  if s1 == "":
-    return len(s2)
-  elif s2 == "":
-	  return len(s1)
-  elif s1[-1:] == s2[-1:]:                                # compare last characters
-    return computeED(s1[:-1], s2[:-1])
-  else:
-    return 1 + min(computeED(s1[:-1], s2) , computeED(s1, s2[:-1]), computeED(s1[:-1], s2[:-1]))
+    if s1 == "":
+	return len(s2)
+    elif s2 == "":
+        return len(s1)
+    elif s1[-1:] == s2[-1:]:                                # compare last characters
+        return computeED(s1[:-1], s2[:-1])
+    else:
+        return 1 + min(computeED(s1[:-1], s2) , computeED(s1, s2[:-1]), computeED(s1[:-1], s2[:-1]))
  
     
