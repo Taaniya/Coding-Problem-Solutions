@@ -1,4 +1,13 @@
 #! /bin/usr/bin/env python
+"""
+This script contains implementation of edit distance for 2 strings s1, s2, where |s1|=m & |s2|=n, with 3 different approaches.
+The time complexity of these algorithms by normal recursion can be O(3 ^ m) and m < n. We make atleast m recursion calls and further recur thrice in every call.
+Using memoized recursion, the time complexity is total no. of unique subproblems. Each subproblem cost O(1).
+In worst case the two strings are be completely different. 
+
+Time complexity with memoized recursion is O(m*n).
+Space complexity - O(m*n).
+"""
 
 from functools import lru_cache
 
