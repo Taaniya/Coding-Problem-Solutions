@@ -46,7 +46,6 @@ def editD(a, b, m, n, ed=None):
     else:
         ed[m-1][n-1] =  1 + min(editD(a, b, m, n-1, ed), editD(a, b, m-1, n, ed), editD(a,b , m-1 ,n-1, ed))
         count += 1
-        print(ed)
     return ed[m-1][n-1]
 
 
