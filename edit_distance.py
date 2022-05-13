@@ -3,7 +3,7 @@
 This script contains implementation of edit distance for 2 strings s1, s2, where |s1|=m & |s2|=n, with 3 different approaches.
 The time complexity of these algorithms by normal recursion can be O(3 ^ m) and m < n. We make atleast m recursion calls and further recur thrice in every call.
 Using memoized recursion, the time complexity is total no. of unique subproblems. Each subproblem cost O(1).
-In worst case the two strings are be completely different. 
+In worst case the two strings are be completely different. It has best case complextity O(1) when the 2 strings are identical.
 
 Time complexity with memoized recursion is O(m*n).
 Space complexity - O(m*n).
@@ -40,10 +40,13 @@ def editD(a, b, m, n, ed=None):
     if ed is None:
         ed = [[None for j in range(n)] for i in range(m)]
         
+    if a[:m] == b[:n]:
+        return 0
+
     if m == 0 :
         return n
 
-    elif n == 0 :
+    if n == 0 :
         return m
 
     if ed[m-1][n-1] is not None:
@@ -67,6 +70,8 @@ def findEditDistance(s1, s2):
     """
     if dist.get((s1, s2), None):
 	return dist[(s1, s2)]
+    elif s1 == s2:                                 # equal strings 
+      return 0
     elif s1 == "":
         return len(s2)
     elif s2 == "":
@@ -85,7 +90,9 @@ def computeED(s1,s2):
     >> computeED("cut","cutter")
     >> 3
     """
-    if s1 == "":
+    if s1 == s2:
+      return 0
+    elif s1 == "":
 	return len(s2)
     elif s2 == "":
         return len(s1)
