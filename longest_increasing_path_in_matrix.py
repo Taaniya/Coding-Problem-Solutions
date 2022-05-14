@@ -2,7 +2,10 @@
 """
     This solution finds length of the longest increasing path in a matrix containing  
     such that the path contains numbers in the increasing order.
-    This solution is implemented using Dynamic programming approach and memoization.
+    This solution is implemented using Dynamic programming with recursive approach and memoization.
+    Time complexity - O(n^2)
+    Space complexity - O(n)
+    
     Problem statement reference:
     https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
 
@@ -24,6 +27,7 @@
 				] 
     The longest with increasing numbers from 1,2,6,9.    
     """
+from typing import List 
 
 class Solution:
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
@@ -36,19 +40,19 @@ class Solution:
         
         def getLength(x, y , mat, lookup):
             nonlocal max_length
-            p, q, r, s = -1, -1, -1, -1
+            top, down, left, right = -1, -1, -1, -1
             if (x,y) in lookup:
                 return lookup[(x,y)]
             if ((x-1) >=0) and (mat[x-1][y] > mat[x][y]):
-                p = 1 + getLength(x-1,y,mat,lookup)
+                top = 1 + getLength(x-1,y,mat,lookup)
             if ((x+1) < m) and ((mat[x+1][y] > mat[x][y])):
-                q = 1 + getLength(x+1,y,mat,lookup)
+                down = 1 + getLength(x+1,y,mat,lookup)
             if ((y-1) >= 0) and ((mat[x][y-1] > mat[x][y])):
-                r = 1 + getLength(x,y-1,mat,lookup)
+                left = 1 + getLength(x,y-1,mat,lookup)
             if ((y+1) < n) and ((mat[x][y+1] > mat[x][y])):
-                s = 1 + getLength(x,y+1,mat,lookup)
+                right = 1 + getLength(x,y+1,mat,lookup)
             
-            lookup[(x,y)] = max(1, (max(p, max(q, max(r,s)))))       
+            lookup[(x,y)] = max(1, (max(top, max(down, max(left, right)))))       
             max_length = max(max_length, lookup[(x,y)])
             return lookup[(x,y)]
 
