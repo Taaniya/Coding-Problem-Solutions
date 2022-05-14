@@ -4,7 +4,11 @@ def findLongestPath(mat):
     """
     This function finds length of the longest path in a square matrix containing unique integers 
     such that the path contains numbers in the increasing order with a difference of 1.
-    This solution is implemented using Dynamic programming approach and memoization.
+    This solution is implemented using Dynamic programming with recursion approach and memoization.
+    
+    Time complexity - O(N^2)
+    Space complexity - O(n)
+    
     Problem statement reference:
     https://www.geeksforgeeks.org/find-the-longest-path-in-a-matrix-with-given-constraints/
     Parameters:
