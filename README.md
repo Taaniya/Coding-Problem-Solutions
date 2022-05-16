@@ -29,6 +29,7 @@ This repository contains coding solutions to various problems I came across duri
 23. Longest Increasing Path in a matrix
 24. Quicksort algorithm with randomized partitioning technique
 25. Binary Search Tree with pre, post and inorder traversal
+26. Binary search algorithm
 
 
 #### Programming Languages
