@@ -4,7 +4,7 @@ class BSTNode:
     self.left = None
     self.right = None
      
- def insert(root, val):
+def insert(root, val):
   if root is None:
      root = BSTNode(val) 
   elif val < root.data:
