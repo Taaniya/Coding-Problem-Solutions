@@ -1,4 +1,11 @@
 #! /bin/user/env python 
+""" This script implements the algorithm to cover a distance n by 1,2,3 steps. 3 different algorithms are implemented using 
+LRU cache / dictionary based memoization approaches. 
+
+The time complexity without memoization, with 3 recursions in every call is O(3^n)
+Time complexity after memoization - O(n)
+Space complexity to - O(n) to store in cache (using LRU / dictionary)
+"""
 
 def getCount(d, lookup=None):
     """
