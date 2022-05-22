@@ -38,3 +38,44 @@ def getCount(d, lookup=None):
         num_ways = getCount(d - 1, lookup) + getCount(d - 2, lookup) + getCount(d - 3, lookup)
         lookup[d] = num_ways
         return num_ways
+    
+    
+    
+# Using LRU cache
+from functools import lru_cache
+
+@lru_cache(maxsize=100)
+def coverDist(covered, D):
+  """ 
+  E.g., 
+  >> coverDist(0, 4)
+  >> 7
+  """
+  if covered == D:
+    return 1
+  elif covered > D:
+    return 0
+  else:  
+    count =  coverDist(covered + 1, D) + coverDist(covered + 2, D) + coverDist(covered + 3, D)
+  return count
+
+
+
+# Using lookup dictionary
+lookup = {}
+
+def coverDist(covered, D):
+  """
+  E.g.,
+  >> coverDist(0, 3)
+  >> 4
+  """
+  if lookup.get(covered, None):
+    return lookup[covered]
+  if covered == D:
+    return 1
+  elif covered > D:
+    return 0
+  else:  
+    lookup[covered] = coverDist(covered + 1, D) + coverDist(covered + 2, D) + coverDist(covered + 3, D)
+  return lookup[covered]
