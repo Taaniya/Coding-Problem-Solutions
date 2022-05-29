@@ -19,7 +19,7 @@ This repository contains coding solutions to various problems I came across duri
 13. All pair shortest path - Floyd Warshall Algorithm 
 14. Heapsort Algorithm
 15. Knapsack problem
-16. Longest Common subsequence using DP and memoization
+16. Longest Common subsequence using DP and memoization ([Example illustration](LCS_example.png))
 17. Longest increasing subsequence using DP and memoization
 18. Minimum partition problem
 19. Optimal strategy for game using DP and memoization
