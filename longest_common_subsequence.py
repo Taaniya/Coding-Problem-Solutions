@@ -9,6 +9,11 @@ but not necessarily contiguous. For example, “abc”, “abg”, “bdf”, �
 And "ace" is a subsequence of "abcde", with length 3.
     
     Reference: https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
+    
+Time complexity - Best case is when the 2 sequences are identical - O(1)
+Worst case - When no character matches in the sequences.
+Brute force resursive approach takes time of order - O(2^n). (Recursion tree for given example illustrated in this repo. Refer README)
+Using DP & memoization, O(n * m)
 """
 
 def lcs_len(X,Y,memo=None) : 
