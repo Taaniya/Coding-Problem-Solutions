@@ -1,5 +1,16 @@
 #! /bin/usr/env python
 
+"""
+This script implements function to find longest common subsequence for given 2 sequences.
+
+Problem statement: 
+Given two sequences, find the length of longest subsequence present in both of them. A subsequence is a sequence that appears in the same relative order, 
+but not necessarily contiguous. For example, “abc”, “abg”, “bdf”, “aeg”, ‘”acefg”, .. etc are subsequences of “abcdefg”.
+And "ace" is a subsequence of "abcde", with length 3.
+    
+    Reference: https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
+"""
+
 def lcs_len(X,Y,memo=None) : 
     """
     Finds the length of longest common subsequence.
