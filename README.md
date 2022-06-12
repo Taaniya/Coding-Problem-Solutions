@@ -15,7 +15,7 @@ This repository contains coding solutions to various problems I came across duri
 9. Dijkstra's Single Source shortest path algorithm using Priority queue 
 10. Computing Edit distance using DP with Memoization- Using Array, Dictionary & LRU cache ([Recursion tree](edit_distance_recursion_tree.png))
 11. Finding longest path in a matrix
-12. Finding subset of numbers equal to a given sum using DP and memoization ([Recursion tree](subset_sum_problem.png))
+12. Subset Sum Problem using DP and memoization ([Recursion tree](subset_sum_problem.png))
 13. All pair shortest path - Floyd Warshall Algorithm 
 14. Heapsort Algorithm
 15. Knapsack problem
