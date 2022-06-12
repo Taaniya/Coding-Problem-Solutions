@@ -6,7 +6,9 @@ The total no. of subsets of a given set of n elements is sum of combinations of 
 
 This implmementation maintains a list of all possible subsets initializing it with an empty set.
 It finds all subsets by iterating over individual elements of given input set and 
-updates the list in every iteration. The inner loop takes O(2^n) time 
+updates the list in every iteration. In every iteration for an element in  input set, it adds the element 
+in existing subsets in the subset_list maintained while retaining them originally as well. 
+The inner loop takes O(2^n) time.
 
 Time & space complexity: O(n2^n)
 """
@@ -15,12 +17,24 @@ import copy
 def find_all_subset(S):
   """
   E.g., 
+  >> subsets_ls = find_all_subset({5})
+  >> print(subsets_ls)
+  >> [set(), {5}]
+  >> print(len(subsets_ls))
+  >> 2
+
+  >> subsets_ls = find_all_subset({5, 6})
+  >> print(subsets_ls)
+  >> [set(), {5}, {6}, {5, 6}]
+  >> print(len(subsets_ls))
+  >> 4
+
   >> subsets_ls = find_all_subset({5,6,7,8})
   >> print(subsets_ls)
   >> [set(), {8}, {5}, {8, 5}, {6}, {8, 6}, {5, 6}, {8, 5, 6}, {7}, {8, 7}, {5, 7}, {8, 5, 7}, {6, 7}, {8, 6, 7}, {5, 6, 7}, {8, 5, 6, 7}]
   >> print(len(subsets_ls))
   >> 16
-  
+
   """
   subset_ls = []                  # list containing all possible subset
   subset_ls.append(set())         # add empty set
