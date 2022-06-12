@@ -31,6 +31,7 @@ This repository contains coding solutions to various problems I came across duri
 25. Binary Search Tree with pre, post and inorder traversal
 26. Binary search algorithm
 27. Create Minimal Binary Search Tree ([Example illustration](Minimum_BST.png))
+28. Return all subsets of a set
 
 #### Programming Languages
 1. Python
