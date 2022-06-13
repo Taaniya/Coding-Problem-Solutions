@@ -1,52 +1,46 @@
 #! /user/bin/env python
 
-def findMax(items, weights, w):
-    """
-    Solution for 0/1 Knapsack problem implemented using Dynamic Programming approach and memoization.
-    
-    Parameters:
-    -------------
-    items : List(int), list of integers representing items
-    weights : List(int), list of weights corresponding to each item
-    w : (int) weight capacity of knapsack
-    
-    Returns:
-    -------------
-    maximum : (int), Maximum value of subset of items with total weight <= weight capacity.
-    
-    eg.
-    >> findMax([2,3,5,7],[2,4,6,8],10)
-    >> 9
-    
-    """
-    # key-value pairs where key is a tuple(size,total value)
-    lookup = dict()
-    maximum = 0         # maximum total weight
-    
-    def isPresent(size,k,total):
-        nonlocal maximum
-        # key = (size,total)
-        key = (size,k)
-        
-        if key in lookup:
-            return lookup[key]
-        if size == 0:
-            if k <= w:
-                maximum = max(maximum, total)
-                lookup[key] = total
-            else:
-                lookup[key] = 0
-            return lookup[key]
-        elif k > w:
-            return 0
-        maximum = max(maximum, total)
-        # Either an item is included in the optimal subset or it's not.
-        # We'll try both and cache the boolean result whether 
-        # the total weight <= weight capacity
-        inc = isPresent(size-1, k+weights[size-1], total+items[size-1])
-        exc = isPresent(size-1, k, total)
-        lookup[key] = max(inc, exc)
-        return   lookup[key]
-    
-    _ = isPresent(len(items),0,0)
-    return maximum
+import copy
+
+def findMaxSet(items, weights, cp):
+  """
+  Solution for 0/1 Knapsack problem implemented using Dynamic Programming approach and memoization.
+  A row & column of zeros in the beginning to set up default values in the dp array.
+  
+  Time and space complexity - O(n * w)
+  Reference - https://www.youtube.com/watch?v=zRza99HPvkQ   
+
+  Parameters:
+  -------------
+  items : List(int), list of integers representing items
+  weights : List(int), list of weights corresponding to each item
+  w : (int) weight capacity of knapsack
+  
+  Returns:
+  -------------
+  maximum : (int), Maximum value of subset of items with total weight <= weight capacity.
+  eg.
+    >> findMaxSet([5,7, 2,3],[6,8,2,4],15)
+    >> 12
+    >>
+    >> findMaxSet([1, 2, 5, 6],[2, 3, 4, 5],8)
+    >> 8
+
+  """
+  dp = [[0 for col in range(cp+1)] for row in range(len(items)+1)]
+  items = [0] + items
+  weights = [0] + weights
+
+  for i in range(len(dp)):
+    for w in range(len(dp[0])):
+      if ((w == 0) or (i == 0)):
+        dp[i][w] = 0
+      elif weights[i] <= w:
+        # Either an item is included in the optimal subset or it's not. 
+        # We choose max of the 2 resulting choices
+        dp[i][w] = max(items[i] + dp[i-1][w-weights[i]] , dp[i-1][w])
+      else: 
+        # When current item's weight > capacity
+        # use same value as previous row (i.e. prev item) for same weight column
+        dp[i][w] = copy.deepcopy(dp[i-1][w])
+  return dp[len(items)-1][cp]
