@@ -8,14 +8,14 @@ This repository contains coding solutions to various problems I came across duri
 2. [Sherlock and Watson Gym Secrets](https://code.google.com/codejam/contest/5254487/dashboard#s=p1) (Google Code Jam 2016)
 3. Ruby Necklace (TechGig CodeGladiators 2018)
 4. Ben - The Gamer (TechGig CodeGladiators 2018)
-5. Adding 2 numbers represented as linked lists
-6. Breadth First Search with queue
-7. Depth First Search with Recursion & cycle detection
-8. Cycle Detection in Graphs with Union find
-9. Dijkstra's Single Source shortest path algorithm using Priority queue 
-10. Computing Edit distance using DP with Memoization- Using Array, Dictionary & LRU cache ([Recursion tree](edit_distance_recursion_tree.png))
-11. Finding longest path in a matrix
-12. Subset Sum Problem using DP and memoization ([Recursion tree](subset_sum_problem.png))
+5. [Adding 2 numbers represented as linked lists](add_two_numbers_linked_list.py)
+6. [Breadth First Search with queue](breadth_first_search.py)
+7. [Depth First Search with Recursion & cycle detection](depth_first_search.py)
+8. [Cycle Detection in Graphs with Union find](detect_cycle_with_union_find.py)
+9. [Dijkstra's Single Source shortest path algorithm using Priority queue](dijkstras_shortest_path_algorithm.py)
+10. [Edit distance using DP with Memoization](edit_distance.py)- Using Array, Dictionary & LRU cache ([Recursion tree](edit_distance_recursion_tree.png))
+11. [Finding longest path in a matrix](find_longest_path_in_matrix.py)
+12. [Subset Sum Problem using DP and memoization](find_subset_adding_up_to_given_sum.py) ([Recursion tree](subset_sum_problem.png))
 13. All pair shortest path - Floyd Warshall Algorithm 
 14. Heapsort Algorithm
 15. Knapsack problem
