@@ -38,6 +38,8 @@ def findMaxSet(items, weights, cp):
       elif weights[i] <= w:
         # Either an item is included in the optimal subset or it's not. 
         # We choose max of the 2 resulting choices
+        # w - weights[i] = remaining capacity of knapsack if item i with weight w[i] is added 
+        # dp[i-1][w-weights[i]] = total profit till (i-1)th item
         dp[i][w] = max(items[i] + dp[i-1][w-weights[i]] , dp[i-1][w])
       else: 
         # When current item's weight > capacity
