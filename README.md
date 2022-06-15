@@ -16,17 +16,17 @@ This repository contains coding solutions to various problems I came across duri
 10. [Edit distance using DP with Memoization](edit_distance.py)- Using Array, Dictionary & LRU cache ([Recursion tree](edit_distance_recursion_tree.png))
 11. [Finding longest path in a matrix](find_longest_path_in_matrix.py)
 12. [Subset Sum Problem using DP and memoization](find_subset_adding_up_to_given_sum.py) ([Recursion tree](subset_sum_problem.png))
-13. All pair shortest path - Floyd Warshall Algorithm 
-14. Heapsort Algorithm
-15. Knapsack problem
-16. Longest Common subsequence using DP and memoization ([Example illustration](LCS_example.png))
-17. Longest increasing subsequence using DP and memoization
-18. Minimum partition problem
-19. Optimal strategy for game using DP and memoization
-20. Topological sort in graphs
-21. Ways to cover a distance
-22. Word squares problem
-23. Longest Increasing Path in a matrix
+13. [All pair shortest path - Floyd Warshall Algorithm](floyd_warshall_algorithm.py)
+14. [Heapsort Algorithm](heapsort_algo.py)
+15. [Knapsack problem](knapsack_problem.py)
+16. [Longest Common subsequence using DP and memoization](longest_common_subsequence.py) ([Example illustration](LCS_example.png))
+17. [Longest increasing subsequence using DP and memoization](longest_increasing_subsequence.py)
+18. [Minimum partition problem](minimum_partition_problem.py)
+19. [Optimal strategy for game using DP and memoization](optimal_strategy_for_a_game.py)
+20. [Topological sort in graphs](topological_sort.py)
+21. [Ways to cover a distance](ways_to_cover_a_distance.py)
+22. [Word squares problem](word_squares_problem.py)
+23. [Longest Increasing Path in a matrix](longest_increasing_path_in_matrix.py)
 24. Quicksort algorithm with randomized partitioning technique
 25. Binary Search Tree with pre, post and inorder traversal
 26. Binary search algorithm
