@@ -27,11 +27,11 @@ This repository contains coding solutions to various problems I came across duri
 21. [Ways to cover a distance](ways_to_cover_a_distance.py)
 22. [Word squares problem](word_squares_problem.py)
 23. [Longest Increasing Path in a matrix](longest_increasing_path_in_matrix.py)
-24. Quicksort algorithm with randomized partitioning technique
-25. Binary Search Tree with pre, post and inorder traversal
-26. Binary search algorithm
-27. Create Minimal Binary Search Tree ([Example illustration](Minimum_BST.png))
-28. Return all subsets of a set
+24. [Quicksort algorithm with randomized partitioning technique](quicksort.py) [Algorithm Analysis Notebook](quicksort_algorithm_analysis.ipynb)
+25. [Binary Search Tree with pre, post and inorder traversal](binary_search_tree.py)
+26. [Binary search algorithm](binary_search.py)
+27. [Create Minimal Binary Search Tree](create_minimal_BST.py) ([Example illustration](Minimum_BST.png))
+28. [Return all subsets of a set](find_all_subsets.py)
 
 #### Programming Languages
 1. Python
