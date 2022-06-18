@@ -54,7 +54,7 @@ def get_min_partition_diff(s, s1, s2, lookup=None):
   >> 1
   >> get_min_partition_diff([1,1,1, 1,2], 0, 0)
   >> 1
-  
+
   Reference:
     https://www.techiedelight.com/minimum-sum-partition-problem/
   """
@@ -68,11 +68,11 @@ def get_min_partition_diff(s, s1, s2, lookup=None):
   if idx < 0:
     return abs(s1 - s2)
 
-  # uniquely identify each subrpoblem with idx of last integer & sum of elements in s1
+  # uniquely identify each subpoblem with idx of last integer & sum of elements in s1
   key = (idx, s1)
 
   if key in lookup:
-    lookup[key]
+    return lookup[key]
 
   if key not in lookup:
     # Either add the last integer of list in s1 or add it into s2 & recurse for remaining elements
