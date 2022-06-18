@@ -21,7 +21,7 @@ This repository contains coding solutions to various problems I came across duri
 15. [Knapsack problem](knapsack_problem.py) - Medium
 16. [Longest Common subsequence using DP and memoization](longest_common_subsequence.py) ([Example illustration](LCS_example.png)) - Medium
 17. [Longest increasing subsequence using DP and memoization](longest_increasing_subsequence.py) - Mediuim
-18. [Minimum partition problem](minimum_partition_problem.py) - Hard
+18. [Minimum partition problem](minimum_partition_problem.py) ([Recursion Tree](min_partition_prob.png)) - Hard
 19. [Optimal strategy for game using DP and memoization](optimal_strategy_for_a_game.py)
 20. [Topological sort in graphs](topological_sort.py)
 21. [Ways to cover a distance](ways_to_cover_a_distance.py) - Easy
