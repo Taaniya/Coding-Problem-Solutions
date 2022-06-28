@@ -32,7 +32,3 @@ This repository contains coding solutions to various problems I came across duri
 26. [Binary search algorithm](binary_search.py)
 27. [Create Minimal Binary Search Tree](create_minimal_BST.py) ([Example illustration](Minimum_BST.png)) - Easy
 28. [Return all subsets of a set](find_all_subsets.py) - Medium
-
-#### Programming Languages
-1. Python
-2. Java 
