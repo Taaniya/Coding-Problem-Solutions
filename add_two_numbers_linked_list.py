@@ -1,8 +1,8 @@
 #!/bin/env python
 
 """
-Given two non-empty linked lists representing two non-negative integers. 
-The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers 
+Problem statement - Given two non-empty linked lists representing two non-negative integers. 
+The digits are stored in reverse order (least significant digit at head) and each of their nodes contain a single digit. Add the two numbers 
 and return it as a linked list.
 """
 
@@ -45,9 +45,14 @@ class Solution:
  
 
 if __name__ == "__main__":
-    l1 = ListNode(0)
-    l2 = ListNode(7)
-    l2.next = ListNode(3)
+  # Examples
+  # l1 = [1] , l2 = [7,3] => [8,3] => 1 + 37 = 38  
+  # l1 = [0] , l2 = [7,3] => [7,3] => 0 + 37 = 37
+  # l1 = [3] , l2 = [7,3] => [0,4] => 3 + 37 = 40
+  # l1 = [8,9] ,l2 = [2] => [0,0,1] => 98 + 2 = 100
+    l1 = ListNode(8)
+    l1.next = ListNode(9)
+    l2 = ListNode(2)
     sol = Solution()
     result_list = sol.addTwoNumbers(l1, l2)
     while result_list is not None:
