@@ -4,6 +4,9 @@
 Problem statement - Given two non-empty linked lists representing two non-negative integers. 
 The digits are stored in reverse order (least significant digit at head) and each of their nodes contain a single digit. Add the two numbers 
 and return it as a linked list.
+
+Time complexity = max(m,n) where m, n are length of lists l1 & l2 and the algorithms iterate through the longest list
+Space complexity = Length of the resulting list containing the sum is of maximum length = max(m,n) + 1, where is for carry.
 """
 
 class ListNode:
@@ -13,7 +16,7 @@ class ListNode:
 
 class Solution:
     def addTwoNumbers(self, l1, l2):
-        head = node = None
+        result = node = None
         carry = 0
         def add(a, b, carry):
             total = a + b + carry
@@ -26,7 +29,7 @@ class Solution:
         while (l1 is not None) and (l2 is not None):
             value, carry = add(l1.val, l2.val, carry)
             if node is None:
-                head = node = ListNode(value)       
+                result = node = ListNode(value)       
             else:
                 node.next = ListNode(value)
                 node = node.next
@@ -34,14 +37,15 @@ class Solution:
             l2 = l2.next
 
         llist = l1 if l1 is not None else l2
-        while llist is not None:
+        while llist is not None:     # traverse through remaining list if other has ended
             value, carry = add(llist.val, carry, 0)
             node.next = ListNode(value)
             node = node.next
             llist = llist.next             
-        if carry == 1:
+        if carry:                    # add remaining carry in result if present 
             node.next = ListNode(carry)
-        return head
+        return result
+ 
  
 
 if __name__ == "__main__":
