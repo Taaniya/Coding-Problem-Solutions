@@ -1,4 +1,5 @@
 #!/bin/env python
+# Problem statement
 
 import collections
 
