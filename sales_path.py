@@ -14,11 +14,11 @@ import sys
 import copy
 
 class Node:
-  def __init__(self, cost):
+  def __init__(self, cost: int):
     self.cost = cost
     self.children = []
        
-def findMinimalPath(root):
+def findMinimalPath(root: Node) -> int:
   if not len(root.children):
     min_cost = 0
   else:
@@ -30,7 +30,7 @@ def findMinimalPath(root):
       min_cost = copy.deepcopy(cost)
   return min_cost      
 
-def printTree(root):
+def printTree(root: Node) -> None:
   print(f"\nNode:{root.cost}")
   for child in root.children:
     print(f"child node: {child.cost}")
