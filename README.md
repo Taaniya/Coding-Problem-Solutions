@@ -33,3 +33,4 @@ This repository contains coding solutions to various problems I came across duri
 27. [Create Minimal Binary Search Tree](create_minimal_BST.py) ([Example illustration](Minimum_BST.png)) - Easy
 28. [Return all subsets of a set](find_all_subsets.py) - Medium
 29. [Sales path problem](sales_path.py) - [Example illustration](sales_path_problem_example.png)
+30. [Meet Planner](meet_planner.py)
