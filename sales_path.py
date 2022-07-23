@@ -6,6 +6,13 @@ The root is the company itself, and every node in the tree represents a car dist
 parent node and ships them to its children nodes. The leaf nodes are car dealerships that sell cars direct to consumers. 
 In addition, every node holds an integer that is the cost of shipping a car to it.
 
+Solution: 
+if the root is also a leaf, the best Sales Path, is simply the value in the node itself. This is the base case for the solution. 
+
+If the root has children, then the minimal Sales Path is also a minimal path from the root’s child. Thus, if we already know the 
+minimal cost for the root’s children, then the minimal cost for the root is simply the minimum of the values for its children plus the value 
+stored in the root itself.
+
 Time complexity = O(n). Each node in the tree is visited atmost once with recursion.
 Space complexity = Maxium O(n) sapce for the stack to hold recursive calls.
 """
