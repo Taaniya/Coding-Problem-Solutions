@@ -20,7 +20,7 @@ class Node:
        
 def findMinimalPath(root: Node) -> int:
   if not len(root.children):
-    min_cost = 0
+    min_cost = root.cost
   else:
     min_cost = sys.maxsize
 
