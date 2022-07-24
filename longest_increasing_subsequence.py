@@ -1,4 +1,13 @@
 #!/usr/bin/env python
+"""
+Problem statement - 
+To find the length of the longest subsequence of a given sequence such that all elements of the subsequence are sorted in increasing order.
+The elements forming longest subsequence need not necessarily be contiguous in given sequence.
+
+The time complexity of below implementation is - O(n^2)
+Space complexity - O(n)
+
+"""
 
 def getLis(arr: List[int]) -> int:
     """
