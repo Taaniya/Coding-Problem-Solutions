@@ -70,11 +70,11 @@ def findSubset(arr, total):
 
         else:
             # Either include last element into consideration or we don't
-            lookup[key] = isPresent(arr[:n-1], sum + arr[n-1])
+            lookup[key] = isPresent(arr[:-1], sum + arr[-1])
             
             # only if a subset adding upto total is still not found, try finding it further
             if not lookup[key]:
-                lookup[key] = isPresent(arr[:n-1], sum)           
+                lookup[key] = isPresent(arr[:-1], sum)           
         return lookup[key]
     found = isPresent(arr,0)
     print(lookup)
