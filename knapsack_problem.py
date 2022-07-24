@@ -1,5 +1,11 @@
 #! /user/bin/env python
 
+"""
+Problem statement- 
+Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. 
+i.e., given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items 
+respectively.You cannot break an item, either pick the complete item or don’t pick it (0-1 property).
+"""
 import copy
 
 def findMaxSet(items, weights, cp):
