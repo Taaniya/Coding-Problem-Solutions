@@ -39,7 +39,7 @@ def get_min_partition_diff(s, s1, s2, lookup=None):
   ----------------------
   (int) Minimum difference between 2 subsets
   eg. 
-  >> get_min_partition_diff([10,25,15,5,20],4, 0, 0)
+  >> get_min_partition_diff([10,25,15,5,20], 0, 0)
   >> 5
   >>
   where,
