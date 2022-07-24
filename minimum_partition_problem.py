@@ -3,7 +3,7 @@
 import copy
 
 """ 
-Problem statement - To divides a given set of positive integers into 2 subsets such that 
+Problem statement - To divide a given set of positive integers into 2 subsets such that 
 the absolute difference between the sum is minimum and returns this difference. 
 A brute force approach is to use a recursive function to find all possible combinations of 
 array elements to form 2 sets & find the optimal solution with minimum difference in the sums of 2 sets.
