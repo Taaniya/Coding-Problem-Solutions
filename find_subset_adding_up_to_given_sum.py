@@ -1,3 +1,9 @@
+#! /user/bin/env python
+"""
+This script implements solution to subset sum problem using 2 approaches. 
+Recursive approach with Time complexity O(2^n)
+Dynamic programmic approach with memoization using tabulation with Time complexity O(n^2). Given below.
+"""
 
 def findSubset(arr, total):
     """
@@ -80,3 +86,53 @@ def findSubset(arr, total):
     print(lookup)
     print(len(lookup))
     return found
+
+
+import copy 
+
+def findSubset(arr, total):
+  """
+  Subset sum problem implemented using Dynamic Programming approach and memoization with tabulation
+  A row & column of zeros in the beginning to set up default values in the dp array.
+  
+  Time and space complexity - O(n^2)
+  Reference - https://www.youtube.com/watch?v=zRza99HPvkQ   
+  (This can be solved with similar approach as knapsack problem)
+
+  
+  Returns:
+  -------------
+  maximum : (int), Maximum value of subset of items with total weight <= weight capacity.
+  E.g., 
+    >> findSubset([4, 11, 7, 5], 12)
+    >> True
+    >> findSubset( [12, 3, 4, 1], 12)
+    >> True
+    >> findSubset( [7, 5, 4, 11], 12)
+    >> True
+    >> findSubset( [2, 3, 4, 1], 12)
+    >> False
+  """
+  dp = [[0 for col in range(total+1)] for row in range(len(arr)+1)]
+  arr = [0] + arr
+
+  for i in range(len(dp)):
+    for w in range(len(dp[0])):
+      if ((w == 0) or (i == 0)):
+        dp[i][w] = 0
+      elif arr[i] <= w:
+        # Either an item is included in the optimal subset or it's not. 
+        # We choose max of the 2 resulting choices
+        # w - arr[i] = remaining sum if array element i is added 
+        # dp[i-1][w-arr[i]] = total value till (i-1)th element
+        dp[i][w] = max(arr[i] + dp[i-1][w-arr[i]] , dp[i-1][w])
+      else: 
+        # When current element value > total
+        # use same value as previous row (i.e. prev array element) for same sum column
+        dp[i][w] = copy.deepcopy(dp[i-1][w])
+
+  if dp[len(arr)-1][total] == total:
+    print("True")
+  else:
+    print("False")
+  return dp[len(arr)-1][total]
