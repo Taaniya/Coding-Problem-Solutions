@@ -5,6 +5,8 @@ def findLongestPath(mat):
     This function finds length of the longest path in a square matrix containing unique integers 
     such that the path contains numbers in the increasing order with a difference of 1.
     This solution is implemented using Dynamic programming with recursion approach and memoization.
+    We use a dictionary 'lookup' keyed by a cell coordinates (x,y) to cache length of 
+    increasing order locally for every cell.
     
     Time complexity - O(N^2)
     Space complexity - O(n)
@@ -35,7 +37,7 @@ def findLongestPath(mat):
     >> findLongestPath(mat)
     >> 7
     """
-    lookup = dict()
+    lookup = dict()          
     m = len(mat)
     n = len(mat[0])    
     maximum = 1
