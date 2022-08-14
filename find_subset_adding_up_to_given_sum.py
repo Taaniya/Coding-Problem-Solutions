@@ -102,7 +102,7 @@ def findSubset(arr, total):
   
   Returns:
   -------------
-  maximum : (int), Maximum value of subset of items with total weight <= weight capacity.
+  maximum : (int), Maximum value of subset of items with total sum <= given total
   E.g., 
     >> findSubset([4, 11, 7, 5], 12)
     >> True
