@@ -115,24 +115,25 @@ def findSubset(arr, total):
   """
   dp = [[0 for col in range(total+1)] for row in range(len(arr)+1)]
   arr = [0] + arr
+  subset_found = False
 
   for i in range(len(dp)):
-    for w in range(len(dp[0])):
-      if ((w == 0) or (i == 0)):
-        dp[i][w] = 0
-      elif arr[i] <= w:
-        # Either an item is included in the optimal subset or it's not. 
-        # We choose max of the 2 resulting choices
-        # w - arr[i] = remaining sum if array element i is added 
-        # dp[i-1][w-arr[i]] = total value till (i-1)th element
-        dp[i][w] = max(arr[i] + dp[i-1][w-arr[i]] , dp[i-1][w])
-      else: 
-        # When current element value > total
-        # use same value as previous row (i.e. prev array element) for same sum column
-        dp[i][w] = copy.deepcopy(dp[i-1][w])
-
-  if dp[len(arr)-1][total] == total:
-    print("True")
-  else:
-    print("False")
-  return dp[len(arr)-1][total]
+    if not subset_found:
+      for w in range(len(dp[0])):
+        if ((w == 0) or (i == 0)):
+          dp[i][w] = 0
+        elif arr[i] <= w:
+          # Either an item is included in the optimal subset or it's not. 
+          # We choose max of the 2 resulting choices
+          # w - arr[i] = remaining sum if array element i is added 
+          # dp[i-1][w-arr[i]] = total value till (i-1)th element
+          dp[i][w] = max(arr[i] + dp[i-1][w-arr[i]] , dp[i-1][w])
+        else: 
+          # When current element value > total
+          # use same value as previous row (i.e. prev array element) for same sum column
+          dp[i][w] = copy.deepcopy(dp[i-1][w])
+        if dp[i][w] == total:                # stop early if subset summing upto total found
+          subset_found = True
+          break
+  
+  return subset_found
