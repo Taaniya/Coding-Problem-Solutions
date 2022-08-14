@@ -24,8 +24,8 @@ def lcs_len(X,Y,memo=None) :
     
     Parameters:
     ----------------------
-    X - List(str)
-    Y - List(str)
+    X - str
+    Y - str
     memo = empty dictionary of tuple and integer pairs holding length of longest 
            subsequence for a pair strings in a tuple
     
