@@ -8,6 +8,7 @@ The time complexity of below implementation is - O(n^2)
 Space complexity - O(n)
 
 """
+from typing import List
 
 def getLis(arr: List[int]) -> int:
     """
@@ -47,9 +48,9 @@ def getLis(arr: List[int]) -> int:
         elif j < 0:
           memo[i] = 1
         else:
-            for j in range(i):                
-                if arr[i] > arr[j]:
-                    memo[i] = max( lis(j,j-1) + 1, memo[i])
+            for k in range(i):                
+                if arr[i] > arr[k]:
+                    memo[i] = max( lis(k,k-1) + 1, memo[i])
         maximum = max(maximum, memo[i])
         done[i] = 1        
         return memo[i]
