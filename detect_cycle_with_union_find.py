@@ -19,7 +19,7 @@ class Graph():
             return parent[u]
             
     def union(self,u, u_parent, v_parent, parent):
-        # Add the v's parent as child of u's parent (graphically)
+        # Add v's parent as child of u's parent (graphically)
         if parent[v_parent] == -1:
             parent[v_parent] = u
         else:
