@@ -41,19 +41,19 @@ def getLis(arr: List[int]) -> int:
     done = [0] * size
     maximum = 0
     
-    def lis(i,j):   
+    def lis(current,prev):   
         nonlocal maximum
-        if done[i]:
-            return memo[i]
-        elif j < 0:
-          memo[i] = 1
+        if done[current]:
+            return memo[current]
+        elif prev < 0:
+          memo[current] = 1
         else:
-            for k in range(i):                
-                if arr[i] > arr[k]:
-                    memo[i] = max( lis(k,k-1) + 1, memo[i])
-        maximum = max(maximum, memo[i])
-        done[i] = 1        
-        return memo[i]
+            for k in range(current):                
+                if arr[current] > arr[k]:
+                    memo[current] = max( lis(k,k-1) + 1, memo[current])
+        maximum = max(maximum, memo[current])
+        done[current] = 1        
+        return memo[current]
     
     for i in range(size):
         _ = lis(i, i-1)
