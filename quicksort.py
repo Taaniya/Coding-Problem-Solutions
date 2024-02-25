@@ -12,6 +12,12 @@ import copy
 import random 
 
 def partition(a, first, last, randomize):
+  """
+  Chooses a pivot and divides given array into 2 sub arrays such that elements in sub array 1 
+  is <= pivot and those in 2nd sub array are > pivot. The elements within the sub array may be unsorted
+  in the output of this function. Sub sequently, the recursive to quicksort performs sorting of elements in each 
+  sub array, each time placing the pivot at an appropriate position in the array.
+  """
   # Returns index with which to partition. O(n)
   if randomize:    
     r_index = random.randint(first, last)
@@ -21,8 +27,9 @@ def partition(a, first, last, randomize):
   i = first - 1
   for j in range(first, last):
     if a[j] <= pivot:
-      i += 1
+      i += 1               # increment i until a[j] > pivot
       a[i], a[j] = swap(a[i], a[j])
+    # else, continue. i.e., increment j until a[j] <= pivot is encountered
   a[i+1], a[last] = swap(a[i+1], a[last])
   return i + 1
 
