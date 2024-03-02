@@ -1,8 +1,8 @@
 class BSTNode:
-  def __init__(self, data):
+  def __init__(self, data=0, left=None, right=None):
     self.data = data
-    self.left = None
-    self.right = None
+    self.left = left
+    self.right = right
      
 def insert(root, val):
   if root is None:
@@ -15,21 +15,21 @@ def insert(root, val):
     print(f"Node with given data already exists. Can't insert duplicates. val={val}, root.data {root.data}")
   return root
 
-def preorder(root):
+def preorder(root: Optional[BSTNode]):
   if root is not None:
     print(root.data)
     preorder(root.left)
     preorder(root.right)
   return
 
-def inorder(root):
+def inorder(root: Optional[BSTNode]):
   if root is not None:
     inorder(root.left)
     print(root.data)
     inorder(root.right)
   return
 
-def postorder(root):
+def postorder(root: Optional[BSTNode]):
   if root is not None:
     postorder(root.left)
     postorder(root.right)
