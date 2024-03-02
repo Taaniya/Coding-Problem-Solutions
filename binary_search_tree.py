@@ -5,6 +5,9 @@ class BSTNode:
     self.right = right
      
 def insert(root, val):
+  """ Time complexity - O(h) since it inserts at leaf node
+      space complexity - O(h) , h - height of the tree
+  """
   if root is None:
      root = BSTNode(val) 
   elif val < root.data:
@@ -16,6 +19,9 @@ def insert(root, val):
   return root
 
 def preorder(root: Optional[BSTNode]):
+  """ Time complexity - O(n) since it visits each node
+      space complexity - O(h) , h - height of the tree
+  """
   if root is not None:
     print(root.data)
     preorder(root.left)
@@ -23,6 +29,9 @@ def preorder(root: Optional[BSTNode]):
   return
 
 def inorder(root: Optional[BSTNode]):
+  """ Time complexity - O(n) since it visits each node
+      space complexity - O(h) , h - height of the tree
+  """
   if root is not None:
     inorder(root.left)
     print(root.data)
@@ -30,6 +39,9 @@ def inorder(root: Optional[BSTNode]):
   return
 
 def postorder(root: Optional[BSTNode]):
+  """ Time complexity - O(n) since it visits each node
+      space complexity - O(h) , h - height of the tree
+  """
   if root is not None:
     postorder(root.left)
     postorder(root.right)
