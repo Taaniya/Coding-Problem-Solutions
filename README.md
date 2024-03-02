@@ -1,6 +1,6 @@
 ## Code solutions
 
-This repository contains coding solutions to various problems I came across during Hackathons and Code Jam contests and some other interesting coding problems which are fun to practice and solve.
+This repository contains coding solutions to various problems I came across during Hackathons and Code Jam contests and some other interesting coding problems that are fun to practice and solve.
 
 ## Contents
 
@@ -20,7 +20,7 @@ This repository contains coding solutions to various problems I came across duri
 14. [Heapsort Algorithm](heapsort_algo.py)
 15. [Knapsack problem](knapsack_problem.py) - Medium
 16. [Longest Common subsequence using DP and memoization](longest_common_subsequence.py) ([Example illustration](LCS_example.png)) - Medium
-17. [Longest increasing subsequence using DP and memoization](longest_increasing_subsequence.py) - Mediuim
+17. [Longest increasing subsequence using DP and memoization](longest_increasing_subsequence.py) - Medium
 18. [Minimum partition problem](minimum_partition_problem.py) ([Recursion Tree](min_partition_prob.png)) - Hard
 19. [Optimal strategy for game using DP and memoization](optimal_strategy_for_a_game.py) - Hard
 20. [Topological sort in graphs](topological_sort.py)
@@ -34,3 +34,4 @@ This repository contains coding solutions to various problems I came across duri
 28. [Return all subsets of a set](find_all_subsets.py) - Medium
 29. [Sales path problem](sales_path.py) - [Example illustration](sales_path_problem_example.png)
 30. [Meet Planner](meet_planner.py)
+31. [Validate Binary Search Tree](validate_binary_search_tree.py) - Medium
