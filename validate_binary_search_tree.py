@@ -9,7 +9,7 @@ A valid BST is defined as follows:
 - Both the left and right subtrees must also be binary search trees.
 
 E.g., 
-1. root = [2,1,3] (Elements mentioned in BFS traversal form, where root is 2, followed by left child 1 and right child 3. Expected O/P - True
+1. root = [2,1,3] (Elements mentioned in BFS (or Level Order) traversal form, where root is 2, followed by left child 1 and right child 3. Expected O/P - True
 2. root = [5,1,4,null,null,3,6]. Expected output - False
 3. [120,70,140,50,100,130,160,20,55,75,110,119,135,150,200]. Expected output - False
 
