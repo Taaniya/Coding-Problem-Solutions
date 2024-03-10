@@ -52,11 +52,30 @@ def lcs_len(X,Y,memo=None) :
     elif ((m == 0) or (n == 0)):
         memo[(X,Y)] = 0
 
-    elif X[0] == Y[0] :
+    elif X[0] == Y[0] :         # compare 1st character of 2 strings
         memo[(X,Y)] = 1 + lcs_len(X[1:], Y[1:], memo)
 
     else : 
         memo[(X,Y)] = max(lcs_len(X[1:], Y, memo), lcs_len(X, Y[1:], memo)) 
 
     return memo[(X,Y)]
-    
+
+
+"""
+Below code implements the same approach as above but with an LRU cache instead of using a dictionary explicitly.
+"""
+# Using LRU cache 
+from functools import lru_cache
+
+@lru_cache(maxsize=100)
+def LCS(s1: str, s2:str) -> int:
+    if s1 == s2:
+        return len(s1)
+    if not s2:
+        return 0
+    elif not s1:
+        return 0
+    elif s1[0] == s2[0]:                 # compare 1st character of 2 strings
+       return 1 + LCS(s1[1:], s2[1:])
+    else:
+       return max(LCS(s1[1:], s2) , LCS(s1, s2[1:]))
