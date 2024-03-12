@@ -10,7 +10,7 @@ import copy
 
 def findMaxSet(items, weights, cp):
   """
-  Solution for 0/1 Knapsack problem implemented using Dynamic Programming approach and memoization.
+  Solution for 0/1 Knapsack problem implemented using Dynamic Programming with tabulation.
   A row & column of zeros in the beginning to set up default values in the dp array.
   
   Time and space complexity - O(n * w)
