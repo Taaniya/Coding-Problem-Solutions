@@ -92,7 +92,7 @@ import copy
 
 def findSubset(arr, total):
   """
-  Subset sum problem implemented using Dynamic Programming approach and memoization with tabulation
+  Subset sum problem implemented using Dynamic Programming approach with tabulation
   A row & column of zeros in the beginning to set up default values in the dp array.
   
   Time and space complexity - O(n^2)
