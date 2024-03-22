@@ -35,3 +35,4 @@ This repository contains coding solutions to various problems I came across duri
 29. [Sales path problem](sales_path.py) - [Example illustration](sales_path_problem_example.png)
 30. [Meet Planner](meet_planner.py)
 31. [Validate Binary Search Tree](validate_binary_search_tree.py) - Medium
+32. [Two Sum problem](two_sum.py) - Easy
