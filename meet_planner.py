@@ -19,7 +19,7 @@ Time complexity - O(m + n). Linear time. Time slots for both A & B are processed
 Space complexity - O(1). Uses constant space
 """
 
-from typing import List, Any
+from typing import List, Any, Tuple
 
 def meeting_planner(slotsA: List[List[int]] , slotsB: List[List[int]], dur: int) -> List[Any]:
   """
@@ -66,6 +66,35 @@ def meeting_planner(slotsA: List[List[int]] , slotsB: List[List[int]], dur: int)
       
   return []
 
+# Alternative approach with same time complexity
+def meet_planner(slotsA: List[Tuple[int, int]], slotsB:List[Tuple[int, int]], dur: int) -> Any:
+    ia = 0
+    ib = 0
+  
+    while((ia < len(slotsA)) & (ib < len(slotsB))):  
+      if slotsA[ia][1] - slotsA[ia][0] < dur:
+        ia += 1
+        print(f"inside if ia {ia}")
+        continue
+      if slotsB[ib][1] - slotsB[ib][0] < dur:
+        ib += 1
+        continue
+      
+      # check whether availability of both satisfies the duration constraint
+      if slotsB[ib][0] <= slotsA[ia][0]:                  # if B is available before A
+        # ensure B's availability ends atleast 'dur' seconds after A's starts
+        if (slotsB[ib][1] - slotsA[ia][0] >= dur):        
+          start = max(slotsA[ia][0], slotsB[ib][0])
+          return [start, start + dur]
+        else:
+          ib += 1
+      else:
+        if (slotsA[ia][1] - slotsB[ib][0] >= dur):
+          start = max(slotsA[ia][0], slotsB[ib][0])
+          return [start, start + dur]
+        else:
+          ia += 1
+    return []
 
 if __name__ == "__main__":
   print(meeting_planner([[1,10]], [[2,3], [5,7]], 2))
