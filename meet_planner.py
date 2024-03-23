@@ -24,8 +24,6 @@ from typing import List, Any
 def meeting_planner(slotsA: List[List[int]] , slotsB: List[List[int]], dur: int) -> List[Any]:
   """
   E.g., 
-  >> meeting_planner([[1,10]], [[2,3], [5,7]], 2)
-  >> []
   >> meeting_planner([[7,12]], [[2,11]], 5)
   >> []
   >> meeting_planner([[6,12]], [[2,11]], 5)
