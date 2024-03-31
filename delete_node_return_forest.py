@@ -5,7 +5,7 @@ After deleting all nodes with a value in to_delete, we are left with a forest (a
 Return the roots of the trees in the remaining forest. You may return the result in any order.
 
 Approach:
-Traverse the tree in level order (BFS) and while visiting each node check whether current node & its nodes
+Traverse the tree in level order (BFS) and while visiting each node check whether current node & its child nodes
 have to be deleted.
 Time complexity - O(V+E)
 """
