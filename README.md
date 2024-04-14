@@ -37,3 +37,4 @@ This repository contains coding solutions to various problems I came across duri
 31. [Validate Binary Search Tree](validate_binary_search_tree.py) - Medium
 32. [Two Sum problem](two_sum.py) - Easy
 33. [Delete node return Forest](delete_node_return_forest.py) - Medium
+34. [When graph forms a single connected component](when_graph_forms_single_connected_component.py) - Medium
