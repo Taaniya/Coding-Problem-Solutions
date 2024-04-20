@@ -1,4 +1,9 @@
 #!/bin/env python
+""" 
+Topological sorting problem statement: 
+Given a directed acyclic graph (DAG), find a linear ordering of vertices 
+such that for all edges (v, w), v precedes w in the ordering.
+"""
 
 import collections
 
@@ -15,7 +20,7 @@ class Graph():
         Implements Topological sort for a directed graph represented in edglist format.
         The algorithm begins with computing in-degress of all vertices, taking O(V)*O(N) = O(E) time.
         It uses a dictionary to keep track of vertices with 0 in-degree, thus taking O(1) time for finding 
-        the next vertex with 0 in-degree.During topological sorting, for each vertex with 0 in-degree it updates its adjacent vertices'
+        the next vertex with 0 in-degree. During topological sorting, for each vertex with 0 in-degree it updates its adjacent vertices'
         in-degrees, taking O(E). The overall time complexity is thus O(E) + O(E) ~ O(E).
         
         Refernces:
