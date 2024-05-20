@@ -40,3 +40,4 @@ This repository contains coding solutions to various problems I came across duri
 34. [When graph forms a single connected component](when_graph_forms_single_connected_component.py) - Medium
 35. [Maximum length of semi decreasing sub arrays](max_length_semi_decreasing_subarray.py) - Medium
 36. [Parallel courses](parallel_courses.py) - Medium
+37. [Count nodes equal to average of subtree](count_nodes_equal_avg_subtree.py) - Medium
