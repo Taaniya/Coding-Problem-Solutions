@@ -30,7 +30,7 @@ This repository contains coding solutions to various problems I came across duri
 24. [Quicksort algorithm with randomized partitioning technique](quicksort.py) ([Algorithm Analysis Notebook](quicksort_algorithm_analysis.ipynb))
 25. [Binary Search Tree with pre, post and inorder traversal](binary_search_tree.py)
 26. [Binary search algorithm](binary_search.py)
-27. [Create Minimal Binary Search Tree](create_minimal_BST.py) ([Example illustration](Minimum_BST.png)) - Easy
+27. [Create Minimal Binary Search Tree](create_minimal_BST.py) ([Example illustration](Minimum_BST.png)) - Easy (with pre, post & inorder traversal)
 28. [Return all subsets of a set](find_all_subsets.py) - Medium
 29. [Sales path problem](sales_path.py) - [Example illustration](sales_path_problem_example.png)
 30. [Meet Planner](meet_planner.py)
