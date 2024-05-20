@@ -39,3 +39,4 @@ This repository contains coding solutions to various problems I came across duri
 33. [Delete node return Forest](delete_node_return_forest.py) - Medium
 34. [When graph forms a single connected component](when_graph_forms_single_connected_component.py) - Medium
 35. [Maximum length of semi decreasing sub arrays](max_length_semi_decreasing_subarray.py) - Medium
+36. [Parallel courses](parallel_courses.py) - Medium
