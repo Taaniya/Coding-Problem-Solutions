@@ -9,8 +9,8 @@ This repository contains coding solutions to various problems I came across duri
 3. Ruby Necklace (TechGig CodeGladiators 2018)
 4. Ben - The Gamer (TechGig CodeGladiators 2018)
 5. [Adding 2 numbers represented as linked lists](add_two_numbers_linked_list.py) - Easy
-6. [Breadth First Search with queue](breadth_first_search.py)
-7. [Depth First Search with Recursion & cycle detection](depth_first_search.py)
+6. [Breadth First Search with queue](breadth_first_search.py) (Graph)
+7. [Depth First Search with Recursion & cycle detection](depth_first_search.py) (Graph)
 8. [Cycle Detection in Graphs with Union find](detect_cycle_with_union_find.py) - Medium
 9. [Dijkstra's Single Source shortest path algorithm using Priority queue](dijkstras_shortest_path_algorithm.py) - Medium
 10. [Edit distance using DP with Memoization](edit_distance.py)- Using Array, Dictionary & LRU cache ([Recursion tree](edit_distance_recursion_tree.png)) - Hard
