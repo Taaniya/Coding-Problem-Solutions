@@ -3,7 +3,7 @@ Problem statement:
 There are n nodes in a social network labeled from 0 to n - 1. Given an array logs where logs[i] = [timestampi, xi, yi] indicates that xi and yi will be connected at the time timestampi.
 Connection is symmetric & irrespective of distance / path length between 2 nodes. 
 
-Return the earliest time for which every gets connected with every other person directly or indirectly. 
+Return the earliest time for which every person gets connected with every other person directly or indirectly. 
 If there is no such earliest time, return -1.
 
 Example: 
@@ -18,7 +18,7 @@ import copy
 class Solution:
     def earliestAcq(self, logs: List[List[int]], n: int) -> int:
         graph = Graph(n)
-        logs = sorted(logs, key=lambda ts: ts[0])          # sort logs w.r.t to maintain chronology
+        logs = sorted(logs, key=lambda ts: ts[0])          # sort logs w.r.t timestamp to maintain chronology
         for log in logs:
             graph.add_edge(log[1], log[2])
             if len(graph.visited) == n:
