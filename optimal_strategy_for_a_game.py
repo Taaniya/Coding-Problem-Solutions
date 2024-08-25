@@ -44,13 +44,6 @@ def computeTotal(arr):
         """
         nonlocal maximum           
         
-        if (end - start + 1) % 2 == 1:
-             # play the opponent when # coins are odd. Opponent is greedy. # Update opponent's play as clever as user.
-            if arr[start] > arr[end]:
-                start += 1
-            else:
-                end -= 1
-        
         # play our chance
         if (end - start ) == 1:
             # If only 2 coins are present in the game, choose greedily.
@@ -60,12 +53,14 @@ def computeTotal(arr):
             return lookup[(start, end)]
 
         else:
-            # Play our chance , both ways.
-            # Get max money that can be collected from the remaining if we choose the left most now
-            left = arr[start] + getSum(arr, start+1, end)
+            # Play our chance, both ways, & cleverly play opponent both ways
+            # Get minimum of the 2 possibilities of opponent's turn, if we choose left coin
+            left = arr[start] + min(getSum(arr, start+1, end-1), getSum(arr, start+2, end))
             
-            # Get max money that can be collected from the remaining if we choose the right most now  
-            right = arr[end] + getSum(arr, start, end -1)
+            # Get minimum of the 2 possibilities of opponent's turn, if we choose right coin
+            right = arr[end] + min( getSum(arr, start+1, end-1), getSum(arr, start, end-2))
+            
+            # get the max value of the 2 possibilities of choosing right & left coin
             lookup[(start, end)] = max(left, right)
             maximum = max(maximum, lookup[(start, end)])
 
