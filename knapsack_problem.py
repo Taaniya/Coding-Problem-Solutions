@@ -5,6 +5,16 @@ Problem statement-
 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. 
 i.e., given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items 
 respectively.You cannot break an item, either pick the complete item or don’t pick it (0-1 property).
+
+--------------------------------------------------------------
+Approach -
+- The approach is based on Dynamic programming using tabulation.
+- A 2d array/matrix is maintained to hold the total value in knapsack at different points in time as the items are added gradually, 
+at different capacities of th knapsack from 0 to cp (given maximum capacity).
+- No. of rows in the matrix correspond to the no. of items and no. of column represent the capacity of the knapsack.
+- An additional row and column are included in the 2D array to initialize the entire 1st row and column with value 0 as a base case 
+for all capacity values of knapsack when no item is yet added to the knapsack
+Order of matrix - (n+1, cp+1)
 """
 import copy
 
