@@ -45,7 +45,7 @@ def computeTotal(arr):
         nonlocal maximum           
         
         if (end - start + 1) % 2 == 1:
-             # play the opponent when # coins are odd. Opponent is greedy.
+             # play the opponent when # coins are odd. Opponent is greedy. # Update opponent's play as clever as user.
             if arr[start] > arr[end]:
                 start += 1
             else:
