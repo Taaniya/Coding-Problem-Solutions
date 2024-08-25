@@ -1,6 +1,12 @@
 #! /bin/user/env python 
-""" This script implements the algorithm to cover a distance n by 1,2,3 steps. 3 different algorithms are implemented using 
-LRU cache / dictionary based memoization approaches. 
+""" 
+Problem statement:
+A child is running up a staircase with n steps and can hop either 1 step, 2 steps, or 3 steps at a time. Implement a method to count 
+how many possible ways the child can run up the stairs.
+
+Approach - 
+Using Dynamic Programming approach, 3 different algorithms are implemented using 
+LRU cache/dictionary based memoization approaches. 
 
 The time complexity without memoization, with 3 recursions in every call is O(3^n)
 Time complexity after memoization - O(n)
@@ -38,8 +44,8 @@ def getCount(d, lookup=None):
         return 0
     
     if d not in lookup:
-        # For every distance of d units, we can take either 1, 2 or 3 steps. 
-        # Let's consider all 3 possbilities and sum up the ways in which the 
+        # For every distance of d units, we can take either 1, 2, or 3 steps. 
+        # Let's consider all 3 possibilities and sum up the ways in which the 
         # remaining distances can be covered recursively.
         # Similar to a group by dist & aggregate (sum(ways[d] for d in [1,2,3]))
         num_ways = getCount(d - 1, lookup) + getCount(d - 2, lookup) + getCount(d - 3, lookup)
