@@ -1,4 +1,12 @@
 #! /user/bin/env python
+"""
+Problem statement:
+Consider a row of N coins of values V1 . . . Vn, where N is even. We play a game against an opponent by alternating turns. 
+In each turn, a player selects either the first or last coin from the row, removes it from the row permanently, and receives the value of the coin.
+Determine the maximum possible amount of money we can definitely win if we move first.
+
+Note: The opponent is as clever as the user.
+"""
 
 def computeTotal(arr):
     """
@@ -37,7 +45,7 @@ def computeTotal(arr):
         nonlocal maximum           
         
         if (end - start + 1) % 2 == 1:
-             # play the opponent when # coins are odd
+             # play the opponent when # coins are odd. Opponent is greedy.
             if arr[start] > arr[end]:
                 start += 1
             else:
