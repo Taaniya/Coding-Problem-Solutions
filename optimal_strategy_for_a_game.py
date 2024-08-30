@@ -28,7 +28,6 @@ def computeTotal(arr):
     >> computeTotal([1, 2, 5, 8, 20, 15, 4, 35])
     >> 61
     """
-    maximum = 0
     # create a dictionary maintaining the maximum amount collected with coins between
     # start and end indices. We just need to store the best result ( highest amount of money 
     # that can be collected from the coins between start and end indices )    
@@ -42,8 +41,6 @@ def computeTotal(arr):
         IP = [1,2,3,4]
         OP = 4, 2 = 6
         """
-        nonlocal maximum           
-        
         # play our chance
         if (end - start ) == 1:
             # If only 2 coins are present in the game, choose greedily.
@@ -62,8 +59,7 @@ def computeTotal(arr):
             
             # get the max value of the 2 possibilities of choosing right & left coin
             lookup[(start, end)] = max(left, right)
-            maximum = max(maximum, lookup[(start, end)])
-
+        
         return lookup[(start, end)]
-    _ = getSum(arr,0,len(arr)-1)
-    return maximum
+    score = getSum(arr,0,len(arr)-1)
+    return score
