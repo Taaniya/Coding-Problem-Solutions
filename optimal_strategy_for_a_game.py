@@ -6,6 +6,22 @@ In each turn, a player selects either the first or last coin from the row, remov
 Determine the maximum possible amount of money we can definitely win if we move first.
 
 Note: The opponent is as clever as the user.
+
+Approach -
+Using Dynamic programming with memoization.
+A game tree with an example list of coins [1, 4, 9, 5] is added in this repo. 8 Outcomes for every scenario are mentioned at the bottom of the tree.
+To start with A, if A chooses 5, B has a choice between 1 and 9. If B chooses 1, A will play optimally & choose 9 and eventually achieve score of 14 
+as mentioned in the outcome below. However, since B is also as clever as A it plays optimally & choose 9 expecting the max outcome of 13 
+(if A chooses 1 subsequently).
+
+Considering the next turn is back to A, if A chooses 1, this will maximize outcome for B (B=13) and minimize outcome for A (A=6). Hence, if A plays 
+optimally and chooses 4, it will attain the max outcome as 9. This max outcome is achieved if A starts with 5.
+
+Similarly, if A starts with choosing 1, the maximum outcome it can achieve is 10. This way, the final outcome A can achieve is maximum of the scenarios
+ - resulting outcome of choosing 1 vs 5. Hence, A starts with choosing 1 and can achieve maximum value of 10.
+
+The approach uses memoization to cache intermediate results. This example being short doesn't have an overlapping sub problem, however, arrays with 6 or more
+coins have overlapping sub problems that leverage memoization to save repeating computation calls.
 """
 
 def computeTotal(arr):
