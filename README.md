@@ -22,7 +22,7 @@ This repository contains coding solutions to various problems I came across duri
 16. [Longest Common subsequence using DP and memoization](longest_common_subsequence.py) ([Example illustration](LCS_example.png)) - Medium
 17. [Longest increasing subsequence using DP and memoization](longest_increasing_subsequence.py) - Medium
 18. [Minimum partition problem](minimum_partition_problem.py) ([Recursion Tree](min_partition_prob.png)) - Hard
-19. [Optimal strategy for game using DP and memoization](optimal_strategy_for_a_game.py) - Hard
+19. [Optimal strategy for game using DP and memoization](optimal_strategy_for_a_game.py) ([Game tree illustration](Optimal_strategy_game_tree.png))- Hard
 20. [Topological sort in graphs](topological_sort.py) - Medium
 21. [Ways to cover a distance](ways_to_cover_a_distance.py) - Easy
 22. [Word squares problem](word_squares_problem.py)
