@@ -4,8 +4,26 @@ Problem statement -
 To find the length of the longest subsequence of a given sequence such that all elements of the subsequence are sorted in increasing order.
 The elements forming longest subsequence need not necessarily be contiguous in given sequence.
 
-The time complexity of below implementation is - O(n^2)
-Space complexity - O(n)
+Approach - 
+Can be solved with DP with memoization by traversing through elements of given array and computing LIS for each element i by comparing it with 
+elements previously visited i-2, i-3......, 3, 2, 1, 0. Result of LIS for each element is cached as we proceed with subsequent elements in the array.
+
+Cases :
+Example 1 - [2, 4, 1, 5, 9,7, 10]
+Example 2 - [7, 7, 7, 7]
+Example 3 - [6, 7, 8, 1, 2, 14, 15, 16]
+Example 3 has 2 LIS before 14. one subsequence = 6,7,8 and another 1,2.
+
+Steps - 
+LIS is computed for element current_idx by comparing it with previous element as past_idx. If arr[past_idx] < arr[current_idx], then current element could
+either be only larger than element at past_idx (14 > 2), or there could another longer LIS ending at another element in the past (14 > 8 for subsequence [6,7,8]). 
+Thus, finally LIS is computed as max of LIS w.r.t previous element and also in comparison with other elements in the past.
+
+LIS is maintained globally (single global_max value across all elements in given array) and locally for every element in the array. local_max. This value is 
+cached in memoization approach.
+
+The time complexity of below implementation is - O(n^2) (traversing through element - O(n) * O(n-1) comparing with n-1 elements in the past)
+Space complexity - O(n)   (to recurse for comparison till the 1st element in past)
 
 """
 from typing import List
