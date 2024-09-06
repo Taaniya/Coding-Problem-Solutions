@@ -37,4 +37,47 @@ class Solution:
             
             prev_ele = nums[i]    # update head of previous subarray
 
-        return max_len        
+# Alternative solution
+import bisect
+
+# Below is an optimal algorithm to solve given problem as shared in below link
+# https://youtu.be/tkXKAJ7jNGo?si=mbpM7hr9Laqs1j5v
+# Time complexity - O(nlogn)
+"""
+Approach - 
+possible - Maintains a list of tuple holding contiguous elements from the end of given array as negated values in increasing order. The tuple holds the 
+elements and their in given array.
+best - holds the current longest length of semi-decreasing array so far
+
+"""
+class Solution:
+    def max_subarray(self, nums: List[int]):
+        """
+        E.g., input nums = [7,6,5,4,3,2,1,6,10,11]
+        Output: 8
+        Due to subarray - [7,6,5,4,3,2,1,6]
+
+        E.g., input nums = [57,55,50,60,61,58,63,59,64,60,63]
+        Output: 6
+        Due to subarray [61,58,63,59,64,60]
+
+        E.g., input nums = [1,2,3,4]
+        Output: 0
+        There is no decreasing sub array.
+        """
+        N = len(nums)
+        INF = float('inf')
+        best = 0
+
+        possible = [(-INF, N)]
+        for index in range(N-1, -1, -1):
+            x = nums[index]
+
+            sindex = bisect.bisect_left(possible, (-x, INF))
+            if 0 <= sindex < len(possible):
+                best = max(best, possible[sindex][1] - index + 1)
+
+            if -x > possible[-1][0]:
+                possible.append((-x, index))
+
+        return best
