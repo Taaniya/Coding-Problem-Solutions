@@ -45,7 +45,7 @@ import bisect
 """
 Approach - 
 possible - Maintains a list of tuple holding contiguous elements from the end of given array as negated values in increasing order. The tuple holds the 
-elements and their in given array.
+elements and their index in given array.
 best - holds the current longest length of semi-decreasing array so far
 
 """
