@@ -17,6 +17,8 @@ Output: 0
 There is no decreasing sub array.
 """
 
+from collections import deque
+
 class Solution:
     def maxSubarrayLength(self, nums: List[int]) -> int:
         prev_ele = float('-inf')
@@ -42,27 +44,13 @@ import bisect
 # Below is an optimal algorithm to solve given problem as shared in below link
 # https://youtu.be/tkXKAJ7jNGo?si=mbpM7hr9Laqs1j5v
 # Time complexity - O(nlogn)
-"""
-Approach - 
-possible - Maintains a list of tuple holding contiguous elements from the end of given array as negated values in increasing order. The tuple holds the 
-elements and their index in given array.
-best - holds the current longest length of semi-decreasing array so far
-
-"""
 class Solution:
     def max_subarray(self, nums: List[int]):
         """
-        E.g., input nums = [7,6,5,4,3,2,1,6,10,11]
-        Output: 8
-        Due to subarray - [7,6,5,4,3,2,1,6]
-
-        E.g., input nums = [57,55,50,60,61,58,63,59,64,60,63]
-        Output: 6
-        Due to subarray [61,58,63,59,64,60]
-
-        E.g., input nums = [1,2,3,4]
-        Output: 0
-        There is no decreasing sub array.
+        Approach - 
+        possible - Maintains a list of tuple holding contiguous elements from the end of given array as negated values in increasing order. The tuple holds the 
+        elements and their index in given array.
+        best - holds the current longest length of semi-decreasing array so far.
         """
         N = len(nums)
         INF = float('inf')
@@ -79,4 +67,26 @@ class Solution:
             if -x > possible[-1][0]:
                 possible.append((-x, index))
 
+        return best
+
+
+        def max_subarray_v2(self, nums: List[int]):
+            """
+            Another alternative version similar to above, but hopefully easier to understand.
+            """
+            N = len(nums)
+            INF = float('inf')
+            best = 0
+            possible = deque()
+            possible.appendleft((INF, N))
+            local_max = {}
+            for index in range(N-1, -1, -1):
+                x = nums[index]
+                sindex = bisect.bisect_left(possible, x, key=lambda r: r[0])
+                if 0 < sindex < len(possible):
+                    local_max[(x, index)] = possible[sindex-1][1] - index + 1
+                    best = max( best, local_max[(x, index)])
+    
+                if x < possible[0][0]:
+                    possible.appendleft((x, index))
         return best
