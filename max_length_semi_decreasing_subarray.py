@@ -32,8 +32,7 @@ class Solution:
                     last_ele_index = j
                     break
             subarray_len = last_ele_index - i + 1         # length of longest subarray beginning with i
-            if subarray_len > max_len:
-                max_len = subarray_len
+            max_len = max(max_len, subarray_len)
             
             prev_ele = nums[i]    # update head of previous subarray
 
