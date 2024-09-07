@@ -31,5 +31,20 @@ class Solution:
                 for comp_id in lookup[complement]:
                     if comp_id != i:
                         return [i,comp_id]
-        return []        
+        return []
+
+    def find_indices_pair_sum(arr: List[int], target: int) -> Tuple[int, int]:
+        """
+        Time & space complexity - O(n)
+        """
+        num_index_map = {}    # map array elements to indices
+    
+        for ind1, num1 in enumerate(arr):
+            num_index_map[num1] = ind1
+            diff = target - num1
+            if ((ind2 := num_index_map.get(diff)) is not None) and (ind1 != ind2):
+                # only check if not None to avoid failing if valid index returned is zero
+                return ind1, ind2
+        return -1, -1
+
         
