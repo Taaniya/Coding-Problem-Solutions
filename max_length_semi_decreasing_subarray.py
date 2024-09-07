@@ -73,6 +73,20 @@ class Solution:
         def max_subarray_v2(self, nums: List[int]):
             """
             Another alternative version similar to above, but hopefully easier to understand.
+
+            Approach - 
+            Since the desired subarray has 1st element strictly greater than the last element, we start with traversing the given array 
+            from the end to start. While visiting elements from end, we store smallest element seen so far in a list - possible.
+            This way 'possible' holds these elements in an increasing order and any new smallest element is added in the beginning. 
+            The elements are stored as tuple to also maintain their index in given array.
+
+            For every element in given array, it's position in the sorted array - possible is identified using bisec_left. If its index is
+            identified in the middle of elements in collection, it's deduced to be greater than atleast 1 element seen so far. Thus we compute the 
+            distance between index of current element and the element in possible which currently lies at identified index to get length of this 
+            semi-decreasing array. The longest length for a given element is return as the final answer.
+
+            Time complexity - O(nlogn) (involves single for loop (O(n)) and bisect_left (O(logn)) for every element during an iteration. 
+            Space complexity - O(n)
             """
             N = len(nums)
             INF = float('inf')
