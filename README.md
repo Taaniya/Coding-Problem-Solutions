@@ -45,3 +45,4 @@ This repository contains coding solutions to various problems I came across duri
 39. [Logger rate limiter](logger_rate_limiter.py) - Medium
 40. [Predicting winner in optimal game strategy](predict_winner_in_optimal_game_strategy.py) - Medium
 41. [Detonate maximum number of bombs](detonate_max_bombs.py) - Medium
+42. [Longest repeating character replacement](longest_repeating_character_replacement.py) - Medium
