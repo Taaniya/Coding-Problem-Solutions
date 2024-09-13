@@ -9,7 +9,9 @@ class MinHeap():
         self.queue = []
         self.pos = {}         # Indices of nodes in queue       
     def qsize(self): return len(self.queue)
-    def par(self, i): return  math.floor((i-1)/2)
+    def par(self, i): 
+        """Returns i's parent node"""
+        return  math.floor((i-1)/2)
     def left(self, i): return 2*i + 1
     def right(self, i): return 2*i + 2
     def insert(self, tup):
