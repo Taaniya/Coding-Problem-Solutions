@@ -95,20 +95,23 @@ class Graph():
         """
         unvisited = MinHeap()        
         visited = set()
-        dist = []
+        dist = []      # hold shortest distance from source for each node in the graph
         for v_id in range(0, self.v):
             if v_id != src:
+                # initialize shortest distance from source as infinite
                 dist.append(sys.maxsize)
                 unvisited.insert((sys.maxsize, v_id))
             else:
                 unvisited.insert((0, src))
                 dist.append(0)
+        # Perform BFS traversal
         while unvisited.queue:
             min_node = unvisited.extract_min()
             visited.add(min_node)
             for nbr,w in self.graph[min_node]:
                 new_dist = w + dist[min_node]
                 if new_dist < dist[nbr]:
-                    unvisited.decrease_key((dist[nbr], nbr), new_dist)
+                    # update shortest distance from source / update priority
+                    unvisited.decrease_key((dist[nbr], nbr), new_dist)    
                     dist[nbr] = new_dist 
         return dist
