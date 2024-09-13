@@ -43,6 +43,10 @@ class MinHeap():
             self.swap(idx, self.par(idx))
             idx = self.par(idx)
     def extract_min(self):
+        """ Extracts 1st element from the min_heap. Swaps it with the last element in the heap.
+        Calls min_heapify to move this element to its appropriate position in the heap to restore
+        min-heap property.
+        """
         if self.qsize() != 0 :
             min_node = self.queue[0][1]
             self.queue[0] = self.queue[self.qsize() - 1]
