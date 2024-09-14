@@ -98,15 +98,15 @@ class Graph():
         # check parent / membership, combine if needed
         p_u =  self.find_parent(u)
         p_v =  self.find_parent(v)
-        if (p_u == -1) & (p_v == -1):
+       if (p_u == u) & (p_v == v):
            # both are new vertices to add, set 1 of them as parent of the other
            self.parent[u] = u
            self.parent[v] = u
            self.set_size[u] = 2
-        elif p_u == -1:
+        elif p_u == u:
            self.parent[u] = copy.deepcopy(self.parent[v])
-           self.set_size[self.parent[v]] += 1      # increase size of set for parent of v
-        elif p_v == -1:
+           self.set_size[self.parent[v]] += 1  # increase size of set for parent of v
+        elif p_v == v:
            self.parent[v] = copy.deepcopy(self.parent[u])
            self.set_size[self.parent[u]] += 1      # increase size of set for parent of u
         elif p_u != p_v:         # both have different parents / are from different sets
