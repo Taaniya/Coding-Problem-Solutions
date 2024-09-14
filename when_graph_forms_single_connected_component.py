@@ -10,6 +10,18 @@ Example:
 Input: logs = [[20190101,0,1],[20190104,3,4],[20190107,2,3],[20190211,1,5],[20190224,2,4],[20190301,0,3],[20190312,1,2],[20190322,4,5]], n = 6
 Output: 20190301
 
+------------------------------------------
+Approach -
+This is solved using disjoint set union below, where union is performed by size.
+Following mappings are maintained -
+parent - to map every graph vertex with its parent vertex (also referred as set representative)
+set_size - maps every parent vertex (set representative) to the count of members in its set
+
+As the flow begins, for every new edge created between any 2 vertices, if the 2 are not already in the same set, the sets associated with the 
+2 vertices are combined by union and setting a common parent for the two.
+
+The moment, when all the vertices get associated with the same parent / set, the graph becomes a single connected component. 
+This marks the time when every person get connected with every other person.
 
 """
 from collections import defaultdict
@@ -21,7 +33,7 @@ class Solution:
         logs = sorted(logs, key=lambda ts: ts[0])          # sort logs w.r.t timestamp to maintain chronology
         for log in logs:
             graph.add_edge(log[1], log[2])
-            if len(graph.visited) == n:
+            if len(graph.visited) == n:                    # only check for full connectivity once all vertices have been added in graph
                 if graph.is_single_connected_component():
                     return log[0]
         return -1
