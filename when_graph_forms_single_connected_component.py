@@ -50,7 +50,8 @@ class Graph():
         self.vertices[u].append(v)
         self.visited[u] = 1       # mark people added to graph
         self.visited[v] = 1
-        self.set_parent(u, v)
+        # self.set_parent(u, v)
+        self.parent_union(u, v)
             
     def is_single_connected_component(self) -> bool:
         """
