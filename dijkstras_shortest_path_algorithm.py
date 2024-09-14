@@ -31,6 +31,7 @@ class MinHeap():
         self.queue.append(tup)         # insert in the end
         self.pos[tup[1]] = self.qsize() - 1
         self.decrease_key((self.pos[tup[1]], tup[1]), tup[0])    # move to a suitable position w.r.t. priority
+        # self.bubble_up(tup, current_idx=self.pos[tup[1]])
         
     def swap(self, idx1, idx2):
         '''swaps tuples at given indices'''
@@ -67,6 +68,7 @@ class MinHeap():
         while (idx > 0) and (self.queue[self.par(idx)][0] > pr) : 
             self.swap(idx, self.par(idx))
             idx = self.par(idx)
+        # self.bubble_up(node=self.queue[idx], current_idx=idx)
             
     def extract_min(self):
         """ Extracts 1st element (smallest) from the min_heap. Swaps it with the last element in the heap.
@@ -78,11 +80,42 @@ class MinHeap():
             self.queue[0] = self.queue[self.qsize() - 1]
             del self.queue[self.qsize() - 1]
             self.min_heapify(0)
+            # self.bubble_down(0)
             del self.pos[min_node]
             return min_node
         else:
             print("heap is empty")
- 
+
+    def bubble_down(self, i):
+        """
+        Used by extract-min methods after removing min value and replacing it with largest element from the end.
+        """
+        lc = self.left(i)
+        rc = self.right(i)
+
+        if (lc < self.qsize()) and (self.queue[lc][0] < self.queue[i][0]):
+            minimum = lc
+        else:
+            minimum = i
+        if (rc < self.qsize()) and (self.queue[rc][0] < self.queue[minimum][0]):
+            minimum = rc
+        if i != minimum:
+            self.swap(i, minimum)
+            self.bubble_down(minimum)
+        else:
+            # Heap invariant is satisfied
+            return
+
+    def bubble_up(self, node: Tuple[int, int], current_idx: int) -> None:
+        """
+        To be used by insert & decrease_key() method for a node when its priority (distance from source) decreases
+        """
+        pr = node[0]
+        parent_idx = self.par(current_idx)
+        while (parent_idx > 0) and (pr < self.queue[parent_idx][0]):
+                self.swap(current_idx, parent_idx)
+                current_idx = copy.deepcopy(parent_idx)
+                parent_idx = self.par(current_idx)
 
 class Graph():
     def __init__(self):
