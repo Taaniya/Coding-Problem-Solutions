@@ -3,27 +3,42 @@
 import sys
 import math
 from collections import defaultdict
+from typing import Tuple
 
 class MinHeap():
     def __init__(self):
         self.queue = []       # maintains nodes as tuple (<priority>, <node_id>)
         self.pos = {}         # Indices of nodes in queue       
-    def qsize(self): return len(self.queue)
+        
+    def qsize(self): 
+        return len(self.queue)
+        
     def par(self, i): 
         """Returns i's parent node"""
         return  math.floor((i-1)/2)
-    def left(self, i): return 2*i + 1
-    def right(self, i): return 2*i + 2
-    def insert(self, tup):
+        
+    def left(self, i): 
+        return 2*i + 1
+    
+    def right(self, i): 
+        return 2*i + 2
+        
+    def insert(self, tup: Tuple[int, int]) -> None:
+        """
+        Paremeters:
+        tup: tuple holding priority of node & its unique id.
+        """
         self.queue.append(tup)         # insert in the end
         self.pos[tup[1]] = self.qsize() - 1
         self.decrease_key((self.pos[tup[1]], tup[1]), tup[0])    # move to a suitable position w.r.t. priority
+        
     def swap(self, idx1, idx2):
         '''swaps tuples at given indices'''
         node1 = self.queue[idx1][1]
         node2 = self.queue[idx2][1]
         self.queue[idx1], self.queue[idx2] = self.queue[idx2], self.queue[idx1]
         self.pos[node1], self.pos[node2] = idx2, idx1
+        
     def min_heapify(self, i):
         lc = self.left(i)
         rc = self.right(i)
@@ -35,13 +50,24 @@ class MinHeap():
             minimum = rc
         if i!=minimum:
             self.swap(i, minimum)
-    def decrease_key(self, tup, pr):
+            
+    def decrease_key(self, tup: Tuple[int, int], pr: int) -> None:
+        """
+        Moves the node from its current position in the heap to an appropriate position 
+        w.r.t given priority `pr`.
+        
+        Paremeters:
+        ------------------------
+        tup: tuple holding current index of node, and unique id of node.
+        pr: priority of this node
+        """
         idx = self.pos[tup[1]]        # Get current position in queue
-        # update priority and then move it to position w.r.t priority
+        
         self.queue[idx] = (pr, tup[1])
         while (idx > 0) and (self.queue[self.par(idx)][0] > pr) : 
             self.swap(idx, self.par(idx))
             idx = self.par(idx)
+            
     def extract_min(self):
         """ Extracts 1st element (smallest) from the min_heap. Swaps it with the last element in the heap.
         Calls min_heapify to move this element to its appropriate position in the heap to restore
