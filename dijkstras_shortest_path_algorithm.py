@@ -6,7 +6,7 @@ from collections import defaultdict
 
 class MinHeap():
     def __init__(self):
-        self.queue = []
+        self.queue = []       # maintains nodes as tuple (<priority>, <node_id>)
         self.pos = {}         # Indices of nodes in queue       
     def qsize(self): return len(self.queue)
     def par(self, i): 
