@@ -67,6 +67,9 @@ class Graph():
 
     def parent_union(self, u: int, v: int) -> None:
         """ Perform union operation on disjoint set to set common parent for u & v nodes.
+        - Decides parent on basis of node with more members in its set.
+        - Updates set size of the parents of both vertices.
+        - Recursively updates parent for each neighbor connected to the given vertice whose parent got updated in previous step.
         """
         p_u = self.find_parent(u)
         p_v = self.find_parent(v)
