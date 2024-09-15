@@ -30,6 +30,12 @@ class Solution:
             Also returns no. of nodes having value equal to avg of the values of all nodes
             in its subtree.
             All leaf nodes will have value equal to avg of all node values in the subtree.
+
+
+            Time complexity - O(n) , where n is the total no. of nodes in the tree
+            Space complexity - O(h) for a balanced tree - best case, where h is the height of the tree. 
+                           In worst case, for a skewed tree, height may also be as many as the total 
+                           no. of nodes in the tree.
             """
             num_left_nodes = 0
             num_right_nodes = 0
