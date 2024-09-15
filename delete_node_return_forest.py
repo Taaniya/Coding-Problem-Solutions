@@ -9,8 +9,11 @@ Expected output =  [[1,2,null,4],[6],[7]]
 
 Approach:
 Traverse the tree in level order (BFS) and while visiting each node check whether current node & its child nodes
-have to be deleted.
+have to be deleted. While maintaining nodes to be visited in queue, add a boolean flag indicating whether it has a parent 
+along with the node's value.
+
 Time complexity - O(V+E)
+Space complexity - O(V)
 """
 
 from collections import deque
