@@ -1,3 +1,7 @@
+"""
+Problem statement:
+Detect cycles in an undirected graph.
+"""
 #!/bin/env python
 # Problem statement
 
