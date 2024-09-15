@@ -84,6 +84,7 @@ from typing import List
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         """
+        Find length of longest increasing subsequence using Dynamic Programming - Memoization.
         Time complexity of below implementation - O(n^2)
 
         eg.
