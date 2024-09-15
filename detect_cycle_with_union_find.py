@@ -1,6 +1,9 @@
 """
 Problem statement:
 Detect cycles in an undirected graph.
+
+Note that union-find can not be used to detect cycles in a directed graph
+https://stackoverflow.com/questions/61167751/can-we-detect-cycles-in-directed-graph-using-union-find-data-structure
 """
 #!/bin/env python
 # Problem statement
