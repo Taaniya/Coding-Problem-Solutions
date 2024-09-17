@@ -20,11 +20,14 @@ Using Dynamic programming with memoization.
 This is similar to solving the problem of optimal strategy for a game.
 Both players take turns. 1st Player takes turn when argument is passed as 0.
 Recursive function computes score of 1st player by adding up its score at its every turn.
-!st Player score is computed based on maximum of final outcome of 2 scenario - where it either picks 1st array element or the 2nd one.
+1st Player score is computed based on maximum of final outcome of 2 scenario - where it either picks 1st array element or the 2nd one.
 
-The score computed by minimum of 2 final outcomes during other player's turn is eventually added to score of 1st player turn due to recursive call in score calculation of player. Computing this score for 1st player as a minmum of 2 scenarios is equivalent to the opponent playing so as to maximize its own score (while minimizing 1st player's score), hence the minimum.
+The score computed by minimum of 2 final outcomes during other player's turn is eventually added to score of 1st player turn due to
+recursive call in score calculation of player. Computing this score for 1st player as a minmum of 2 scenarios is equivalent to the 
+opponent playing so as to maximize its own score (while minimizing 1st player's score), hence the minimum.
 
-To keep track of score player 2 along with player 1, to identify the winner its score, every element selected by 2nd player during its turn is subtracted from score returned during 2nd player's turn.
+To keep track of score player 2 along with player 1, to identify the winner its score, every element selected by 2nd player during 
+its turn is subtracted from score returned during 2nd player's turn.
 This is computed 1st player's score related to 2nd player.
 If this score >= 0, 1st player either has equal score as 2nd player or more than that.
 
