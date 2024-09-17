@@ -7,7 +7,12 @@ The player adds the chosen number to their score. The game ends when there are n
 Return true if Player 1 can win the game. If the scores of both players are equal, then player 1 is still the winner, 
 and you should also return true. You may assume that both players are playing optimally.
 
+E.g.,
+Input: nums = [1,5,2]
+Output: false
 
+Input: nums = [1,5,233,7]
+Output: true
 ------------------------------------------------------------------------------------------------------------------------------
 Approach -
 Using Dynamic programming with memoization.
