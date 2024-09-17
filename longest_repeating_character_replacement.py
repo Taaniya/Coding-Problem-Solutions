@@ -55,7 +55,8 @@ O(n)
 
 Space complexity:
 O(n)
-
+worst case - when all characters in string are unique, & k = n, where len(freq) = n
+best case - when k=1, or all characters in string are same already, where len(freq) = 1
 """
 
 class Solution:
