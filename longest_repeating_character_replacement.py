@@ -55,8 +55,11 @@ O(n)
 
 Space complexity:
 O(n)
-worst case - when all characters in string are unique, & k = n, where len(freq) = n
+worst case - when all characters in string are unique, & k = n, where len(freq) = n. 
+   E.g., s = "ABCD" , K = 4
 best case - when k=1, or all characters in string are same already, where len(freq) = 1
+   E.g., s = "AAAA" , K = any value
+         s = ABCD, K = 1  
 """
 
 class Solution:
