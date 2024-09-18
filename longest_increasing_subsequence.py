@@ -123,7 +123,9 @@ class Solution:
             elif past_idx < 0:
                 lis[current_idx] = 1
             elif nums[current_idx] > nums[past_idx]:
-                lis[current_idx] = max(1+lis[past_idx], _lis(current_idx, past_idx-1))
+                # TODO: to check if using bisect right works to find last index before past_index.
+                # Can we use it to perform search of previous index than a linear search by recursing every time?
+                lis[current_idx] = max(1+lis[past_idx], _lis(current_idx, past_idx-1))    
             else:
                 lis[current_idx] = _lis(current_idx, past_idx-1)
             return lis[current_idx]
