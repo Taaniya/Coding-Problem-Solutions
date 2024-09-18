@@ -65,4 +65,12 @@ class Solution:
         _, _, num_nodes_eq_avg = explore_substree(root)
         return num_nodes_eq_avg
 
-        
+if __name__ == "__main__":
+     node0 = TreeNode(0)
+     node1 = TreeNode(1)
+     node6 = TreeNode(6)
+     node8 = TreeNode(8, left=node0, right=node1)
+     node5 = TreeNode(5, right=node6)
+     root = TreeNode(4, left=node8, right=node5)
+     sol = Solution().averageOfSubtree(root)
+     print(sol)     # 5
