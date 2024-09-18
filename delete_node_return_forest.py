@@ -53,3 +53,18 @@ class Solution:
                     node.right = None
             
         return roots
+        
+if __name__ == "__main__":
+    node4 = TreeNode(4)
+    node5 = TreeNode(5)
+    node6 = TreeNode(6)
+    node7 = TreeNode(7)
+    node2 = TreeNode(2, left=node4, right=node5)
+    node3 = TreeNode(3, left=node6, right=node7)
+    root = TreeNode(1, left=node2, right=node3)
+    sol = Solution().delNodes(root=root, to_delete= [3, 5])
+    print(f"solution: {sol}")
+    for node in sol:
+        print(node.val)
+    
+    # 1, 6, 7
