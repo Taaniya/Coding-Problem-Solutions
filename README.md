@@ -25,7 +25,7 @@ This repository contains coding solutions to various problems I came across duri
 19. [Optimal strategy for game using DP and memoization](optimal_strategy_for_a_game.py) ([Game tree illustration](Optimal_strategy_game_tree.png))- Hard
 20. [Topological sort in graphs](topological_sort.py) - Medium
 21. [Ways to cover a distance](ways_to_cover_a_distance.py) - Easy
-22. [Word squares problem](word_squares_problem.py)
+22. [Word squares problem](word_squares_problem.py) - Hard
 23. [Longest Increasing Path in a matrix](longest_increasing_path_in_matrix.py) - Hard
 24. [Quicksort algorithm with randomized partitioning technique](quicksort.py) ([Algorithm Analysis Notebook](quicksort_algorithm_analysis.ipynb))
 25. [Binary Search Tree with pre, post and inorder traversal](binary_search_tree.py)
