@@ -58,3 +58,6 @@ class WordSquares():
             findNextWord(word,line)
 
         return ans
+
+# TODO: implement alternative solution with Trie
+# https://algo.monster/liteproblems/425
