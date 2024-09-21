@@ -65,6 +65,79 @@ class Solution:
         _, _, num_nodes_eq_avg = explore_substree(root)
         return num_nodes_eq_avg
 
+##############################################################################################################################
+# Alternative implementation with different TreeNode structure to hold all info rather than returning the calculation by each 
+# recursive call
+##############################################################################################################################
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.subtree_size = 1          # no. of nodes in subtree including root
+        self.total_subtree_val = 0     # Total value of all nodes in this subtree including root
+        self.num_node_eq_avg_val = 0   # no. of nodes in subtree whose value equals the avg of values of all nodes in its subtree
+
+
+class Solution:
+    def average_of_subtree(self, root: TreeNode) -> int:
+        def explore_subtree(root: TreeNode) -> None:
+            """
+            Explores a node and computes num nodes and the weighted sum in its subtree by post-order traversal, a variant
+            of DFS. This calculation is done bottom up using DFS from leaf node to the root of the tree.
+            
+            Updates intermediate info for each node for its subtree including - no. of nodes having value equal to
+            avg of the values of all nodes in a subtree, weighted sum of value of all nodes in subtree & subtree size.
+            All leaf nodes will have value equal to avg of all node values in the subtree.
+            The root of tree will hold above information for the entire tree.
+            
+            Time complexity - O(n) , where n is the total no. of nodes in the tree, since every node is visited only once/
+            Space complexity - O(h) for a balanced tree - best case, where h is the height of the tree.
+                           In worst case, for a skewed tree, height may also be as many as the total
+                           no. of nodes in the tree.
+            """
+            num_left_nodes = 0
+            num_right_nodes = 0
+            weighted_sum = 0
+            num_nodes_equal_avg_val = 0
+
+            if root.left:
+                explore_subtree(root.left)
+                num_left_nodes = root.left.subtree_size
+                left_weighted_sum = root.left.total_subtree_val
+                num_n_eq_avg = root.left.num_node_eq_avg_val
+                weighted_sum += left_weighted_sum
+                if num_n_eq_avg:
+                    num_nodes_equal_avg_val += num_n_eq_avg
+
+            if root.right:
+                explore_subtree(root.right)
+                num_right_nodes = root.right.subtree_size
+                right_weighted_sum = root.right.total_subtree_val
+                num_n_eq_avg = root.right.num_node_eq_avg_val
+                weighted_sum += right_weighted_sum
+                if num_n_eq_avg:
+                    num_nodes_equal_avg_val += num_n_eq_avg
+
+            weighted_sum += root.val
+            sub_tree_size = num_right_nodes + num_left_nodes + 1
+            avg = int(math.floor(weighted_sum / sub_tree_size))
+
+            if avg == root.val:
+                num_nodes_equal_avg_val += 1
+
+            # update root
+            root.total_subtree_val = weighted_sum
+            root.subtree_size = sub_tree_size
+            root.num_node_eq_avg_val = num_nodes_equal_avg_val
+
+            return
+
+        explore_subtree(root)
+        return root.num_node_eq_avg_val
+
+
 if __name__ == "__main__":
      node0 = TreeNode(0)
      node1 = TreeNode(1)
