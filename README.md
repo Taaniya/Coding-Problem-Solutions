@@ -47,4 +47,4 @@ This repository contains coding solutions to various problems I came across duri
 41. [Detonate maximum number of bombs](detonate_max_bombs.py) - Medium
 42. [Longest repeating character replacement](longest_repeating_character_replacement.py) - Medium
 43. [Implement Trie](implement_trie.py) - Medium
-44. [Dijkstra alternative implementation using python heapq](dijkstra_using_heapq.py))
+44. [Dijkstra alternative implementation using python heapq](dijkstra_using_heapq.py)
