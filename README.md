@@ -12,7 +12,7 @@ This repository contains coding solutions to various problems I came across duri
 6. [Breadth First Search with queue](breadth_first_search.py) (Graph)
 7. [Depth First Search with Recursion & cycle detection](depth_first_search_graph.py) (Graph)
 8. [Cycle Detection in Graphs with Union find](detect_cycle_with_union_find.py) - Medium
-9. [Dijkstra's Single Source shortest path algorithm using Priority queue](dijkstras_shortest_path_algorithm.py) - Medium ([Alternative implementation using python heapq](dijkstra_using_heapq.py))
+9. [Dijkstra's Single Source shortest path algorithm using Priority queue](dijkstras_shortest_path_algorithm.py) - Medium
 10. [Edit distance using DP with Memoization](edit_distance.py)- Using Array, Dictionary & LRU cache ([Recursion tree](edit_distance_recursion_tree.png)) - Hard
 11. [Finding longest path in a matrix](find_longest_path_in_matrix.py)
 12. [Subset Sum Problem using DP and memoization](find_subset_adding_up_to_given_sum.py) ([Recursion tree](subset_sum_problem.png)) - Medium
@@ -47,3 +47,4 @@ This repository contains coding solutions to various problems I came across duri
 41. [Detonate maximum number of bombs](detonate_max_bombs.py) - Medium
 42. [Longest repeating character replacement](longest_repeating_character_replacement.py) - Medium
 43. [Implement Trie](implement_trie.py) - Medium
+44. [Dijkstra alternative implementation using python heapq](dijkstra_using_heapq.py))
