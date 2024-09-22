@@ -75,9 +75,9 @@ class MinHeap():
         self.queue[idx] = (pr, tup[1])           # update priority for this node in heap
         self.bubble_up(node=self.queue[idx], current_idx=idx)  # bubble it up to right index to maintain heap invariant
 
-    def extract_min(self):
+    def extract_min(self) -> int:
         """ Extracts 1st element (smallest) from the min_heap. Swaps it with the last element in the heap.
-        Calls min_heapify to move this element to its appropriate position in the heap to restore
+        Calls bubble_down to move this element to its appropriate position in the heap to restore
         min-heap property.
         """
         if self.qsize() != 0:
