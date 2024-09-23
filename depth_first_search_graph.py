@@ -11,13 +11,13 @@ class Graph():
         self.graph[u].add(v)
 
     def DFS(self, src):
-        '''Performs depth first search with cycle detection for a directed unweighted graph represented as edglist format.
+        '''Performs depth-first search with cycle detection for a directed unweighted graph represented as edgelist format.
         Time complexity: O(V+E) 
         '''
         visited = [0] * self.v
         in_progress = set()               # nodes currently explored with DFS
         def visitNode(src):
-            in_progress.add(src)
+            in_progress.add(src)          # keep track of parent & ancestors visited (in case of undirected graph)
             visited[src] = 1
             for nbr in self.graph[src]:
                 if not visited[nbr]:
