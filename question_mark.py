@@ -7,6 +7,12 @@ Input: "aa6?9"
 Output: false
 Input: "acc?7??sss?3rr1??????5"
 Output: true
+
+Solution Approach -
+* Checks only consecutive digit pairs in the string
+* Counts question marks between each consecutive pair that sums to 10
+* Returns False if any such pair doesn't have exactly 3 question marks
+* Returns False if no pairs sum to 10
 """
 import re
 
