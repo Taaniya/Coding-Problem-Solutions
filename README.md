@@ -12,43 +12,44 @@ This repository contains coding solutions to various problems I came across duri
 6. [Username Validation](username_validation.py) - Easy
 7. [Count Question Mark between digit pairs](question_mark.py) - Easy
 8. [Find intersection of sub-arrays](find_intersection.py) - Easy
-9. [Breadth First Search with queue](breadth_first_search_graph.py) (Graph)
-10. [Depth First Search with Recursion & cycle detection](depth_first_search_graph.py) (Graph)
-11. [Cycle Detection in Graphs with Union find](detect_cycle_with_union_find.py) - Medium
-12. [Dijkstra's Single Source shortest path algorithm using Priority queue](dijkstras_shortest_path_algorithm.py) - Medium
-13. [Edit distance using DP with Memoization](edit_distance.py)- Using Array, Dictionary & LRU cache ([Recursion tree](edit_distance_recursion_tree.png)) - Hard
-14. [Finding longest path in a matrix](find_longest_path_in_matrix.py)
-15. [Subset Sum Problem using DP and memoization](find_subset_adding_up_to_given_sum.py) ([Recursion tree](subset_sum_problem.png)) - Medium
-16. [All pair shortest path - Floyd Warshall Algorithm](floyd_warshall_algorithm.py)
-17. [Heapsort Algorithm](heapsort_algo.py)
-18. [Knapsack problem](knapsack_problem.py) - Medium
-19. [Longest Common subsequence using DP and memoization](longest_common_subsequence.py) ([Example illustration](LCS_example.png)) - Medium
-20. [Longest increasing subsequence using DP and memoization](longest_increasing_subsequence.py) - Medium
-21. [Minimum partition problem](minimum_partition_problem.py) ([Recursion Tree](min_partition_prob.png)) - Hard
-22. [Optimal strategy for game using DP and memoization](optimal_strategy_for_a_game.py) ([Game tree illustration](Optimal_strategy_game_tree.png))- Hard
-23. [Topological sort in graphs](topological_sort.py) - Medium
-24. [Ways to cover a distance](ways_to_cover_a_distance.py) - Easy
-25. [Word squares problem](word_squares_problem.py) - Hard
-26. [Longest Increasing Path in a matrix](longest_increasing_path_in_matrix.py) - Hard
-27. [Quicksort algorithm with randomized partitioning technique](quicksort.py) ([Algorithm Analysis Notebook](quicksort_algorithm_analysis.ipynb))
-28. [Binary Search Tree with pre, post and inorder traversal](binary_search_tree.py)
-29. [Binary search algorithm](binary_search.py)
-30. [Create Minimal Binary Search Tree](create_minimal_BST.py) ([Example illustration](Minimum_BST.png)) - Easy (with pre, post & inorder traversal)
-31. [Return all subsets of a set](find_all_subsets.py) - Medium
-32. [Sales path problem](sales_path.py) - [Example illustration](sales_path_problem_example.png)
-33. [Meet Planner](meet_planner.py)
-34. [Validate Binary Search Tree](validate_binary_search_tree.py) - Medium
-35. [Two Sum problem](two_sum.py) - Easy
-36. [Delete node return Forest](delete_node_return_forest.py) - Medium
-37. [When graph forms a single connected component](when_graph_forms_single_connected_component.py) - Medium
-38. [Maximum length of semi decreasing sub arrays](max_length_semi_decreasing_subarray.py) - Medium
-39. [Parallel courses](parallel_courses.py) - Medium
-40. [Count nodes equal to average of subtree](count_nodes_equal_avg_subtree.py) - Medium
-41. [Minimum area rectangle](minimum_area_rectangle.py) - Medium
-42. [Logger rate limiter](logger_rate_limiter.py) - Medium
-43. [Predicting winner in optimal game strategy](predict_winner_in_optimal_game_strategy.py) - Medium
-44. [Detonate maximum number of bombs](detonate_max_bombs.py) - Medium
-45. [Longest repeating character replacement](longest_repeating_character_replacement.py) - Medium
-46. [Implement Trie](implement_trie.py) - Medium
-47. [Dijkstra alternative implementation using python heapq](dijkstra_using_heapq.py) - Medium
-48. [Pick randomly with weight](random_pick_with_weight.py) - Medium 
+9. [Find longest word in a sentence](find_longest_word_in_sentence.py) - Easy
+10. [Breadth First Search with queue](breadth_first_search_graph.py) (Graph)
+11. [Depth First Search with Recursion & cycle detection](depth_first_search_graph.py) (Graph)
+12. [Cycle Detection in Graphs with Union find](detect_cycle_with_union_find.py) - Medium
+13. [Dijkstra's Single Source shortest path algorithm using Priority queue](dijkstras_shortest_path_algorithm.py) - Medium
+14. [Edit distance using DP with Memoization](edit_distance.py)- Using Array, Dictionary & LRU cache ([Recursion tree](edit_distance_recursion_tree.png)) - Hard
+15. [Finding longest path in a matrix](find_longest_path_in_matrix.py)
+16. [Subset Sum Problem using DP and memoization](find_subset_adding_up_to_given_sum.py) ([Recursion tree](subset_sum_problem.png)) - Medium
+17. [All pair shortest path - Floyd Warshall Algorithm](floyd_warshall_algorithm.py)
+18. [Heapsort Algorithm](heapsort_algo.py)
+19. [Knapsack problem](knapsack_problem.py) - Medium
+20. [Longest Common subsequence using DP and memoization](longest_common_subsequence.py) ([Example illustration](LCS_example.png)) - Medium
+21. [Longest increasing subsequence using DP and memoization](longest_increasing_subsequence.py) - Medium
+22. [Minimum partition problem](minimum_partition_problem.py) ([Recursion Tree](min_partition_prob.png)) - Hard
+23. [Optimal strategy for game using DP and memoization](optimal_strategy_for_a_game.py) ([Game tree illustration](Optimal_strategy_game_tree.png))- Hard
+24. [Topological sort in graphs](topological_sort.py) - Medium
+25. [Ways to cover a distance](ways_to_cover_a_distance.py) - Easy
+26. [Word squares problem](word_squares_problem.py) - Hard
+27. [Longest Increasing Path in a matrix](longest_increasing_path_in_matrix.py) - Hard
+28. [Quicksort algorithm with randomized partitioning technique](quicksort.py) ([Algorithm Analysis Notebook](quicksort_algorithm_analysis.ipynb))
+29. [Binary Search Tree with pre, post and inorder traversal](binary_search_tree.py)
+30. [Binary search algorithm](binary_search.py)
+31. [Create Minimal Binary Search Tree](create_minimal_BST.py) ([Example illustration](Minimum_BST.png)) - Easy (with pre, post & inorder traversal)
+32. [Return all subsets of a set](find_all_subsets.py) - Medium
+33. [Sales path problem](sales_path.py) - [Example illustration](sales_path_problem_example.png)
+34. [Meet Planner](meet_planner.py)
+35. [Validate Binary Search Tree](validate_binary_search_tree.py) - Medium
+36. [Two Sum problem](two_sum.py) - Easy
+37. [Delete node return Forest](delete_node_return_forest.py) - Medium
+38. [When graph forms a single connected component](when_graph_forms_single_connected_component.py) - Medium
+39. [Maximum length of semi decreasing sub arrays](max_length_semi_decreasing_subarray.py) - Medium
+40. [Parallel courses](parallel_courses.py) - Medium
+41. [Count nodes equal to average of subtree](count_nodes_equal_avg_subtree.py) - Medium
+42. [Minimum area rectangle](minimum_area_rectangle.py) - Medium
+43. [Logger rate limiter](logger_rate_limiter.py) - Medium
+44. [Predicting winner in optimal game strategy](predict_winner_in_optimal_game_strategy.py) - Medium
+45. [Detonate maximum number of bombs](detonate_max_bombs.py) - Medium
+46. [Longest repeating character replacement](longest_repeating_character_replacement.py) - Medium
+47. [Implement Trie](implement_trie.py) - Medium
+48. [Dijkstra alternative implementation using python heapq](dijkstra_using_heapq.py) - Medium
+49. [Pick randomly with weight](random_pick_with_weight.py) - Medium 
